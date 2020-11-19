@@ -14,7 +14,7 @@ private:
     string profissao;
 public:
     Profissionais();
-    Profissionais(int id, string nome);
+    Profissionais(int id, string nome, int idade, string genero, string profissao);
     ~Profissionais();
     int getId();
     void setId(int id);

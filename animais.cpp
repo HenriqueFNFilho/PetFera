@@ -4,7 +4,7 @@ Animais::Animais(){
     this->nome = "Null";
 }
 
-Animais::Animais(string nome):nome(nome){}
+Animais::Animais(string nome, string classe, string genero, int idade):nome(nome), classe(classe), genero(genero), idade(idade){}
 
 Animais::~Animais(){}
 

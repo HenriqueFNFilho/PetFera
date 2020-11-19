@@ -4,7 +4,7 @@ Profissionais::Profissionais(){
     this->nome = "Null";
 }
 
-Profissionais::Profissionais(int id, string nome):id(id), nome(nome){}
+Profissionais::Profissionais(int id, string nome, int idade, string genero, string profissao):id(id), nome(nome), idade(idade), genero(genero), profissao(profissao){}
 
 Profissionais::~Profissionais()
 {

@@ -13,7 +13,7 @@ private:
     int idade;
 public:
     Animais();
-    Animais(string nome);
+    Animais(string nome, string classe, string genero, int idade);
     ~Animais();
     string getNome();
     void setNome(string nome);
