@@ -1,4 +1,4 @@
-all: animais profissionais repteis aves anfibios mamiferos veterinarios tratadores
+all: animais profissionais repteis aves anfibios mamiferos veterinarios tratadores empregado
 
 animais: animais.cpp testa_animais.cpp
 	g++ -std=c++11 -Wall animais.cpp testa_animais.cpp -o animais
@@ -23,3 +23,6 @@ veterinarios: profissionais.cpp veterinarios.cpp testa_veterinarios.cpp
 
 tratadores: profissionais.cpp tratadores.cpp testa_tratadores.cpp
 	g++ -std=c++11 -Wall profissionais.cpp tratadores.cpp testa_tratadores.cpp -o tratadores
+
+empregado: profissionais.cpp tratadores.cpp veterinarios.cpp empregado.cpp testa_empregado.cpp
+	g++ -std=c++11 -Wall profissionais.cpp tratadores.cpp veterinarios.cpp empregado.cpp testa_empregado.cpp -o empregado
