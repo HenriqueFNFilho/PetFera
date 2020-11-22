@@ -4,7 +4,7 @@ Profissionais::Profissionais(){
     this->nome = "Null";
 }
 
-Profissionais::Profissionais(int id, string nome, int idade, string genero, string profissao):id(id), nome(nome), idade(idade), genero(genero), profissao(profissao){}
+Profissionais::Profissionais(int id, string nome, int idade, string genero):id(id), nome(nome), idade(idade), genero(genero){}
 
 Profissionais::~Profissionais()
 {
@@ -33,10 +33,4 @@ string Profissionais::getGenero(){
 }
 void Profissionais::setGenero(string genero){
     this->genero = genero;
-}
-string Profissionais::getProfissao(){
-    return this->profissao;
-}
-void Profissionais::setProfissao(string profissao){
-    this->profissao = profissao;
 }

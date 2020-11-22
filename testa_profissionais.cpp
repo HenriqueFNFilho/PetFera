@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     Profissionais* p = new Profissionais();
 
-    p->setNome("Henrique");
+    p->setNome("Henrique Filho");
 
     cout << p->getNome() << endl;
 

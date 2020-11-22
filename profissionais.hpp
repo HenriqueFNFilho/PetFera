@@ -11,10 +11,9 @@ private:
     string nome;
     int idade;
     string genero;
-    string profissao;
 public:
     Profissionais();
-    Profissionais(int id, string nome, int idade, string genero, string profissao);
+    Profissionais(int id, string nome, int idade, string genero);
     ~Profissionais();
     int getId();
     void setId(int id);
@@ -24,8 +23,6 @@ public:
     void setIdade(int idade);
     string getGenero();
     void setGenero(string genero);
-    string getProfissao();
-    void setProfissao(string profissao);
 };
 
 #endif
