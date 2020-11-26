@@ -4,8 +4,11 @@
 
 using namespace std;
 
-int main()
-{
+int main(){
+	Petfera* teste1 = new Petfera("nome", "anfibio", "macho", 15, "troca completa", "escama", "bipede" );
+
+	cout << teste1->getNome();
+
 	Petfera Petfera;
 	Petfera.setNome("Pet Fera");
 	Petfera.setId("Pet Fera RN");
@@ -33,6 +36,14 @@ int main()
 	rato->setIdade(6);
 
 	Petfera.addAnimais(rato);
+
+	Animais* mouse = new Animais();
+	mouse->setNome("claudia");
+	mouse->setClasse("ave");
+	mouse->setGenero("femea");
+	mouse->setIdade(6);
+
+	Petfera.addAnimais(mouse);
 
 	cout << Petfera.getId() << " - " << Petfera.getCadastrados() 
 			<< "/" << CAPACIDADE_MAX << endl;
