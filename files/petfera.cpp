@@ -2,7 +2,21 @@
 
 #include<iostream>
 
-using namespace std;
+using namespace std; 
+
+Petfera::Petfera(){}
+
+Petfera::Petfera(string nome, string id):nome(nome), id(id){}
+
+Petfera::Petfera(string nome, string classe, string genero, int idade){}
+
+Petfera::Petfera(string nome, string classe, string genero, int idade, string ecdise, string tipopele){}
+
+Petfera::Petfera(string nome, string classe, string genero, int idade, string cor, bool voando){}
+
+Petfera::Petfera(string nome, string classe, string genero, int idade, bool amamentando, string dieta, string patas){}
+
+Petfera::~Petfera(){}
 
 string 
 Petfera::getNome(){

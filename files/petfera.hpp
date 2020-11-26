@@ -6,13 +6,20 @@
 
 #define CAPACIDADE_MAX 30 
 
-class Petfera {
+class Petfera: public Animais, Profissionais{
 private:
 	string nome;
 	string id;
 	Animais* animais[CAPACIDADE_MAX];
 	int cadastrados = 0;
 public:
+	Petfera();
+	Petfera(string nome, string id);
+	Petfera(string nome, string classe, string genero, int idade);
+	Petfera(string nome, string classe, string genero, int idade, string ecdise, string tipopele);
+	Petfera(string nome, string classe, string genero, int idade, string cor, bool voando);
+	Petfera(string nome, string classe, string genero, int idade, bool amamentando, string dieta, string patas);
+	~Petfera();
 	string getNome();
 	void setNome(string nome);
 	string getId();
