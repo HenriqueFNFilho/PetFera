@@ -150,6 +150,7 @@ protected:
     bool anfibioExotico;
 public:
     AnfibioExotico(bool exotico, bool anfibioExotico);
+    ~AnfibioExotico();
     bool getAnfibioExotico();
     void setAnfibioExotico(bool anfibioExotico);
 };
@@ -159,6 +160,7 @@ protected:
     bool anfibioNativo;
 public:
     AnfibioNativo(bool nativo, bool anfibioNativo);
+    ~AnfibioNativo();
     bool getAnfibioNativo();
     void setAnfibioNativo(bool anfibioNativo);
 };
@@ -169,6 +171,7 @@ protected:
     bool anfibioDomestico;
 public:
     AnfibioDomestico(bool domestico, bool anfibioDomestico);
+    ~AnfibioDomestico();
     bool getAnfibioDomestico();
     void setAnfibioDomestico(bool anfibioDomestico);
 };
@@ -178,6 +181,7 @@ protected:
     bool reptilExotico;
 public:
     ReptilExotico(bool exotico, bool reptilExotico);
+    ~ReptilExotico();
     bool getReptilExotico();
     void setReptilExotico(bool reptilExotico);
 };
@@ -187,6 +191,7 @@ protected:
     bool reptilNativo;
 public:
     ReptilNativo(bool nativo, bool reptilNativo);
+    ~ReptilNativo();
     bool getReptilNativo();
     void setReptilNativo(bool reptilNativo);
 };
@@ -196,6 +201,7 @@ protected:
     bool reptilDomestico;
 public:
     ReptilDomestico(bool domestico, bool reptilDomestico);
+    ~ReptilDomestico();
     bool getReptilDomestico();
     void setReptilDomestico(bool reptilDomestico);
 };
@@ -205,6 +211,7 @@ protected:
     bool aveExotico;
 public:
     AveExotico(bool exotico, bool aveExotico);
+    ~AveExotico();
     bool getAveExotico();
     void setAveExotico(bool aveExotico);
 };
@@ -214,6 +221,7 @@ protected:
     bool aveNativo;
 public:
     AveNativo(bool nativo, bool aveNativo);
+    ~AveNativo();
     bool getAveNativo();
     void setAveNativo(bool aveNativo);
 };
@@ -223,6 +231,7 @@ protected:
     bool aveDomestico;
 public:
     AveDomestico(bool domestico, bool aveDomestico);
+    ~AveDomestico();
     bool getAveDomestico();
     void setAveDomestico(bool aveDomestico);
 };
@@ -232,6 +241,7 @@ protected:
     bool mamiferoExotico;
 public:
     MamiferoExotico(bool exotico, bool mamiferoExotico);
+    ~MamiferoExotico();
     bool getMamiferoExotico();
     void setMamiferoExotico(bool mamiferoExotico);
 };
@@ -241,6 +251,7 @@ protected:
     bool mamiferoNativo;
 public:
     MamiferoNativo(bool nativo, bool mamiferoNativo);
+    ~MamiferoNativo();
     bool getMamiferoNativo();
     void setMamiferoNativo(bool mamiferoNativo);
 };
@@ -250,6 +261,7 @@ protected:
     bool mamiferoDomestico;
 public:
     MamiferoDomestico(bool domestico, bool mamiferoDomestico);
+    ~MamiferoDomestico();
     bool getMamiferoDomestico();
     void setMamiferoDomestico(bool mamiferoDomestico);
 };

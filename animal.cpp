@@ -192,6 +192,8 @@ void Domestico::setDomestico(bool domestico){
 
 AnfibioExotico::AnfibioExotico(bool exotico, bool anfibioExotico):Exotico(exotico), anfibioExotico(anfibioExotico){}
 
+AnfibioExotico::~AnfibioExotico(){}
+
 bool AnfibioExotico::getAnfibioExotico(){
 	return this->anfibioExotico;
 }
@@ -203,6 +205,8 @@ void AnfibioExotico::setAnfibioExotico(bool anfibioExotico){
 
 
 AnfibioNativo::AnfibioNativo(bool nativo, bool anfibioNativo): Nativo(nativo), anfibioNativo(anfibioNativo){}
+
+AnfibioNativo::~AnfibioNativo(){}
 
 bool AnfibioNativo::getAnfibioNativo(){
 	return this->anfibioNativo;
@@ -216,6 +220,8 @@ void AnfibioNativo::setAnfibioNativo(bool anfibioNativo){
 
 AnfibioDomestico::AnfibioDomestico(bool domestico, bool anfibioDomestico):Domestico(domestico), anfibioDomestico(anfibioDomestico){}
 
+AnfibioDomestico::~AnfibioDomestico(){}
+
 bool AnfibioDomestico::getAnfibioDomestico(){
 	return this->anfibioDomestico;
 }
@@ -227,6 +233,8 @@ void AnfibioDomestico::setAnfibioDomestico(bool anfibioDomestico){
 
 
 ReptilExotico::ReptilExotico(bool exotico, bool reptilExotico):Exotico(exotico), reptilExotico(reptilExotico){}
+
+ReptilExotico::~ReptilExotico(){}
 
 bool ReptilExotico::getReptilExotico(){
 	return this->reptilExotico;
@@ -240,6 +248,8 @@ void ReptilExotico::setReptilExotico(bool reptilExotico){
 
 ReptilNativo::ReptilNativo(bool nativo, bool reptilNativo):Nativo(nativo), reptilNativo(reptilNativo){}
 
+ReptilNativo::~ReptilNativo(){}
+
 bool ReptilNativo::getReptilNativo(){
 	return this->reptilNativo;
 }
@@ -251,6 +261,8 @@ void ReptilNativo::setReptilNativo(bool reptilNativo){
 
 
 ReptilDomestico::ReptilDomestico(bool domestico, bool reptilDomestico):Domestico(domestico), reptilDomestico(reptilDomestico){}
+
+ReptilDomestico::~ReptilDomestico(){}
 
 bool ReptilDomestico::getReptilDomestico(){
 	return this->reptilDomestico;
@@ -264,6 +276,8 @@ void ReptilDomestico::setReptilDomestico(bool reptilDomestico){
 
 AveExotico::AveExotico(bool exotico, bool aveExotico):Exotico(exotico), aveExotico(aveExotico){}
 
+AveExotico::~AveExotico(){}
+
 bool AveExotico::getAveExotico(){
 	return this->aveExotico;
 }
@@ -275,6 +289,8 @@ void AveExotico::setAveExotico(bool aveExotico){
 
 
 AveNativo::AveNativo(bool nativo, bool aveNativo):Nativo(nativo), aveNativo(aveNativo){}
+
+AveNativo::~AveNativo(){}
 
 bool AveNativo::getAveNativo(){
 	return this->aveNativo;
@@ -288,6 +304,8 @@ void AveNativo::setAveNativo(bool aveNativo){
 
 AveDomestico::AveDomestico(bool domestico, bool aveDomestico):Domestico(domestico), aveDomestico(aveDomestico){}
 
+AveDomestico::~AveDomestico(){}
+
 bool AveDomestico::getAveDomestico(){
 	return this-aveDomestico;
 }
@@ -298,6 +316,8 @@ void AveDomestico::setAveDomestico(bool aveDomestico){
 
 
 MamiferoExotico::MamiferoExotico(bool exotico, bool mamiferoExotico):Exotico(exotico), mamiferoExotico(mamiferoExotico){}
+
+MamiferoExotico::~MamiferoExotico(){}
 
 bool MamiferoExotico::getMamiferoExotico(){
 	return this->mamiferoExotico;
@@ -311,6 +331,8 @@ void MamiferoExotico::setMamiferoExotico(bool mamiferoExotico){
 
 MamiferoNativo::MamiferoNativo(bool nativo, bool mamiferoNativo):Nativo(nativo), mamiferoNativo(mamiferoNativo){}
 
+MamiferoNativo::~MamiferoNativo(){}
+
 bool MamiferoNativo::getMamiferoNativo(){
 	return this->mamiferoNativo;
 }
@@ -321,6 +343,8 @@ void MamiferoNativo::setMamiferoNativo(bool mamiferoNativo){
 
 
 MamiferoDomestico::MamiferoDomestico(bool domestico, bool mamiferoDomestico):Domestico(domestico), mamiferoDomestico(mamiferoDomestico){}
+
+MamiferoDomestico::~MamiferoDomestico(){}
 
 bool MamiferoDomestico::getMamiferoDomestico(){
 	return this->mamiferoDomestico;
