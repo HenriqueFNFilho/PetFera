@@ -1,4 +1,11 @@
+#include <iomanip>
 #include "profissional.hpp"
+#include<iostream>
+
+using namespace std;
+
+using std::setfill;
+using std::setw;
 
 
 //implementação da classe Profissional
@@ -37,6 +44,14 @@ string Profissional::getGenero(){
 void Profissional::setGenero(string genero){
     this->genero = genero;
 }
+ostream& operator<< (ostream& o, Profissional& profissional){
+    o << setfill (' ') << setw (10) << profissional.getId() << " | " 
+		<< setfill ('.') << setw (50) << profissional.getNome() << " | " 
+		<< setfill (' ') << setw (5) << profissional.getIdade()<< " | "
+		<< setfill (' ') << setw (10) << profissional.getGenero();
+	return o;
+}
+
 
 
 //implementação da classe Tratador
@@ -53,6 +68,16 @@ string Tratador::getHabilidade(){
 void Tratador::setHabilidade(string habilidade){
     this->habilidade = habilidade;
 }
+ostream& 
+operator<< (ostream &o, Tratador& tratador){
+	o << setfill (' ') << setw (10) << tratador.getId() << " | " 
+		<< setfill ('.') << setw (50) << tratador.getNome() << " | " 
+		<< setfill (' ') << setw (5) << tratador.getIdade() << " | "
+		<< setfill (' ') << setw (10) << tratador.getGenero() << " | " 
+		<< setfill (' ') << setw (50) << tratador.getHabilidade();
+	return o;
+}
+
 
 
 
@@ -75,4 +100,14 @@ string Veterinario::getFormacao(){
 }
 void Veterinario::setFormacao(string formacao){
     this->formacao = formacao;
+}
+ostream& 
+operator<< (ostream &o, Veterinario& veterinario){
+	o << setfill (' ') << setw (10) << veterinario.getId() << " | " 
+		<< setfill ('.') << setw (50) << veterinario.getNome() << " | " 
+		<< setfill (' ') << setw (5) << veterinario.getIdade() << " | "
+		<< setfill (' ') << setw (10) << veterinario.getGenero() << " | " 
+		<< setfill (' ') << setw (50) << veterinario.getEspecialidade() <<" | " 
+		<< setfill (' ') << setw (50) << veterinario.getFormacao();
+	return o;
 }

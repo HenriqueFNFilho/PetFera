@@ -1,6 +1,10 @@
 #pragma once
 
-#include<iostream>  
+#include<string>
+#include<ostream>
+
+using std::string;
+using std::ostream;
 
 using namespace std;
 
@@ -12,10 +16,11 @@ private:
     string nome;
     int idade;
     string genero;
+    
 public:
     Profissional();
     Profissional(int id, string nome, int idade, string genero);
-    ~Profissional();
+    virtual ~Profissional();
     int getId();
     void setId(int id);
     string getNome();
@@ -24,6 +29,9 @@ public:
     void setIdade(int idade);
     string getGenero();
     void setGenero(string genero);
+    friend ostream& operator<< (ostream& o, Profissional& profissional);
+    
+    
 };
 
 
@@ -38,6 +46,9 @@ public:
     ~Tratador();
     string getHabilidade();
     void setHabilidade(string habilidade);
+	friend ostream& operator<< (ostream &o, Tratador& tratador);
+
+    
 };
 
 
@@ -55,6 +66,8 @@ public:
     void setEspecialidade(string especialidade);
     string getFormacao();
     void setFormacao(string formacao);
+	friend ostream& operator<< (ostream &o, Veterinario& veterinario);
 };
 
 
+ 
