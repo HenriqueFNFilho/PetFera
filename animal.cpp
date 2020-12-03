@@ -149,7 +149,7 @@ void Mamifero::setPatas(string patas){
 
 
 
-
+//Implementação da classe Exotico
 
 Exotico::Exotico(bool exotico):exotico(exotico){}
 
@@ -163,6 +163,7 @@ void Exotico::setExotico(bool exotico){
 	this->exotico = exotico;
 }
 
+//Implementação da classe Nativo
 
 Nativo::Nativo(bool nativo): nativo(nativo){}
 
@@ -177,6 +178,8 @@ void Nativo::setNativo(bool Nativo){
 }
 
 
+//Implementação da classe Domestico
+
 Domestico::Domestico(bool domestico): domestico(domestico){}
 
 Domestico::~Domestico(){}
@@ -189,6 +192,9 @@ void Domestico::setDomestico(bool domestico){
 	this->domestico = domestico;
 }
 
+
+
+//Implementação da classe AnfibioExotico
 
 AnfibioExotico::AnfibioExotico(bool exotico, bool anfibioExotico):Exotico(exotico), anfibioExotico(anfibioExotico){}
 
@@ -204,6 +210,8 @@ void AnfibioExotico::setAnfibioExotico(bool anfibioExotico){
 
 
 
+//Implementação da classe AnfibioNativo
+
 AnfibioNativo::AnfibioNativo(bool nativo, bool anfibioNativo): Nativo(nativo), anfibioNativo(anfibioNativo){}
 
 AnfibioNativo::~AnfibioNativo(){}
@@ -217,6 +225,9 @@ void AnfibioNativo::setAnfibioNativo(bool anfibioNativo){
 }
 
 
+
+
+//Implementação da classe AnfibioDomestico
 
 AnfibioDomestico::AnfibioDomestico(bool domestico, bool anfibioDomestico):Domestico(domestico), anfibioDomestico(anfibioDomestico){}
 
@@ -232,6 +243,8 @@ void AnfibioDomestico::setAnfibioDomestico(bool anfibioDomestico){
 
 
 
+//Implementação da classe ReptilExotico
+
 ReptilExotico::ReptilExotico(bool exotico, bool reptilExotico):Exotico(exotico), reptilExotico(reptilExotico){}
 
 ReptilExotico::~ReptilExotico(){}
@@ -245,6 +258,9 @@ void ReptilExotico::setReptilExotico(bool reptilExotico){
 }
 
 
+
+
+//Implementação da classe ReptilNativo
 
 ReptilNativo::ReptilNativo(bool nativo, bool reptilNativo):Nativo(nativo), reptilNativo(reptilNativo){}
 
@@ -260,6 +276,9 @@ void ReptilNativo::setReptilNativo(bool reptilNativo){
 
 
 
+
+//Implementação da classe ReptilDomestico
+
 ReptilDomestico::ReptilDomestico(bool domestico, bool reptilDomestico):Domestico(domestico), reptilDomestico(reptilDomestico){}
 
 ReptilDomestico::~ReptilDomestico(){}
@@ -273,6 +292,9 @@ void ReptilDomestico::setReptilDomestico(bool reptilDomestico){
 }
 
 
+
+
+//Implementação da classe AveExotico
 
 AveExotico::AveExotico(bool exotico, bool aveExotico):Exotico(exotico), aveExotico(aveExotico){}
 
@@ -288,6 +310,8 @@ void AveExotico::setAveExotico(bool aveExotico){
 
 
 
+//Implementação da classe AveNativo
+
 AveNativo::AveNativo(bool nativo, bool aveNativo):Nativo(nativo), aveNativo(aveNativo){}
 
 AveNativo::~AveNativo(){}
@@ -302,6 +326,9 @@ void AveNativo::setAveNativo(bool aveNativo){
 
 
 
+
+//Implementação da classe AveDomestico
+
 AveDomestico::AveDomestico(bool domestico, bool aveDomestico):Domestico(domestico), aveDomestico(aveDomestico){}
 
 AveDomestico::~AveDomestico(){}
@@ -314,6 +341,10 @@ void AveDomestico::setAveDomestico(bool aveDomestico){
 	this->aveDomestico = aveDomestico;
 }
 
+
+
+
+//Implementação da classe MamiferoExotico
 
 MamiferoExotico::MamiferoExotico(bool exotico, bool mamiferoExotico):Exotico(exotico), mamiferoExotico(mamiferoExotico){}
 
@@ -329,6 +360,9 @@ void MamiferoExotico::setMamiferoExotico(bool mamiferoExotico){
 
 
 
+
+//Implementação da classe MamiferoNativo
+
 MamiferoNativo::MamiferoNativo(bool nativo, bool mamiferoNativo):Nativo(nativo), mamiferoNativo(mamiferoNativo){}
 
 MamiferoNativo::~MamiferoNativo(){}
@@ -341,6 +375,10 @@ void MamiferoNativo::setMamiferoNativo(bool mamiferoNativo){
 	this->mamiferoNativo = mamiferoNativo;
 }
 
+
+
+
+//Implementação da classe MamiferoDomestico
 
 MamiferoDomestico::MamiferoDomestico(bool domestico, bool mamiferoDomestico):Domestico(domestico), mamiferoDomestico(mamiferoDomestico){}
 

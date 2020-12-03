@@ -1,31 +1,31 @@
 #include <iostream>
 #include "profissional.hpp"
+#include "animal.hpp"
 #include <vector>
 
-using std::cout;
-using std::endl;
+using namespace std;
+
 
 int main(int argc, char const *argv[])
 {
-	Profissional* lista[20]; //upcasting
-	// Tratador
-	lista[0] = new Tratador(01,"Leleo Antonio",33,"masculino","alimentador");
-	lista[1] = new Tratador(02,"Maria Joaquina",40,"feminino","lavador");
-	lista[2] = new Tratador(03,"Joao Carrero",38,"masculino","alimentador");
-	
-	// Veterinario
-	lista[3] = new Veterinario(04,"Carlos Luiz",39,"masculino","mamiferos","graduacao");
-	lista[4] = new Veterinario(05,"Anita Nataly",49,"feminino","repteis","mestrado");
-	
-	for(int i=0; i<=4; i++){
-		cout << lista[i]->getNome() << endl;
-	}
 	
 	//criando um vetor da classe profissional
 	vector<Profissional*> *profissional = new vector<Profissional*>;
+	vector<Animal*> *animal = new vector<Animal*>;
 
 	Profissional* tratador = new Tratador(06, "Bolsonaro", 67, "feminino", "limpador de fezes");
 	Profissional* veterinario = new Veterinario(07, "Dilma", 68, "feminino", "equinos", "mestre");
+
+	Animal* reptil = new Reptil("Shaokan",reptilDomestico,"feminino", 12, "4 meses", "escamas");
+	Animal* anfibio = new Anfibio("Cururu",anfibioExotico,"masculino", 5, "2 meses", "escamas");
+	Animal* ave = new Ave("Pegeotto",aveNativo,"feminino", 10, "Marron", true);
+	Animal* mamifero = new Mamifero("Peppa",mamiferoDomestico,"feminino", 6, true, "Proteina", "4");
+	
+	//pondo os dados na última posição do vetor
+	animal->push_back(reptil);
+	animal->push_back(anfibio);
+	animal->push_back(ave);
+	animal->push_back(mamifero);
 	
 	//pondo os dados na última posição do vetor
 	profissional->push_back(tratador);
@@ -36,10 +36,30 @@ int main(int argc, char const *argv[])
 
 	profissional->push_back(tratador);
 
-	//escrevento os nomes de cada posição do vetor (pode ser utilizado um for each, ou for comum mesmo)
-	cout << profissional->at(0)->getNome() << endl;
-	cout << profissional->at(1)->getNome() << endl;
-	cout << profissional->at(2)->getNome() << endl;
+	//listando os profissionais
+	for(int i=0; i<3; i++){
+		cout << profissional->at(i)->getNome() << endl;
+	}
+	cout << endl;
+
+	//listando os animais
+	for(int i=0; i<4; i++ ){
+		cout << animal->at(i)->getNome() << endl;
+	}
+	
+	//removendo um dos elementos de animal
+	
+	for(int i=0; i<4; i++){
+		if(animal->at(i)->getNome()=="Pegeotto"){
+			delete animal->at(i);
+		}
+	}
+	cout << endl;
+
+	//listando os animais após Pegeotto ser removido
+	for(int i=0; i<4; i++ ){
+		cout << animal->at(i)->getNome() << endl;
+	}
 	
 	return 0;
 }

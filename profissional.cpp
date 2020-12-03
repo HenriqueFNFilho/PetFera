@@ -2,7 +2,8 @@
 #include "profissional.hpp"
 #include<iostream>
 
-using namespace std;
+using std::cin;
+using std::cout;
 
 using std::setfill;
 using std::setw;
@@ -54,6 +55,8 @@ ostream& operator<< (ostream& o, Profissional& profissional){
 
 
 
+
+
 //implementação da classe Tratador
 
 Tratador::Tratador(){}
@@ -76,6 +79,26 @@ operator<< (ostream &o, Tratador& tratador){
 		<< setfill (' ') << setw (10) << tratador.getGenero() << " | " 
 		<< setfill (' ') << setw (50) << tratador.getHabilidade();
 	return o;
+}
+
+void Tratador::criaTratador(){
+	int i;
+	string s;
+	cout << "ID: ";
+	cin >>  i;
+	setId(i);
+	cout << "Nome: ";
+	cin >> s;
+	setNome(s);
+	cout << "Idade: ";
+	cin >> i;
+	setIdade(i);
+	cout << "genero: ";
+	cin >> s;
+	setGenero(s);
+	cout << "Habilida: ";
+	cin >> s;
+
 }
 
 

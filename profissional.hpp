@@ -1,5 +1,7 @@
 #pragma once
 
+#include<vector>
+
 #include<string>
 #include<ostream>
 
@@ -47,6 +49,7 @@ public:
     string getHabilidade();
     void setHabilidade(string habilidade);
 	friend ostream& operator<< (ostream &o, Tratador& tratador);
+    void criaTratador();
 
     
 };

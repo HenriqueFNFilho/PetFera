@@ -7,18 +7,18 @@ using namespace std;
 
 enum TipoDoAnimal
 {
-    AnfibioExotico,
-    AnfibioNativo,
-    AnfibioDomestico,
-    ReptilExotico,
-    ReptilNativo,
-    ReptilDomestico,
-    AveExotico,
-    AveNativo,
-    AveDomestico,
-    MamiferoExotico,
-    MamiferoNativo,
-    MamiferoDomestico
+    anfibioExotico,
+    anfibioNativo,
+    anfibioDomestico,
+    reptilExotico,
+    reptilNativo,
+    reptilDomestico,
+    aveExotico,
+    aveNativo,
+    aveDomestico,
+    mamiferoExotico,
+    mamiferoNativo,
+    mamiferoDomestico
 };
 
 
@@ -115,6 +115,10 @@ public:
     void setPatas(string patas);
 };
 
+
+
+//Declaraçao da classe Exotico
+
 class Exotico{
 protected:
     bool exotico;
@@ -124,6 +128,10 @@ public:
     bool getExotico();
     void setExotico(bool exotico);
 };
+
+
+
+//Declaraçao da classe Nativo
 
 class Nativo{
 protected:
@@ -135,6 +143,10 @@ public:
     void setNativo(bool Nativo);
 };
 
+
+
+//Declaraçao da classe Domestico
+
 class Domestico{
 protected:
     bool domestico;
@@ -145,6 +157,10 @@ public:
     void setDomestico(bool domestico);
 };
 
+
+
+//Declaraçao da classe AnfibioExotico
+
 class AnfibioExotico: public Anfibio, Exotico{
 protected:
     bool anfibioExotico;
@@ -154,6 +170,11 @@ public:
     bool getAnfibioExotico();
     void setAnfibioExotico(bool anfibioExotico);
 };
+
+
+
+
+//Declaraçao da classe AnfibioNativo
 
 class AnfibioNativo: public Anfibio, Nativo{
 protected:
@@ -166,6 +187,10 @@ public:
 };
 
 
+
+
+//Declaraçao da classe AnfibioDomestico
+
 class AnfibioDomestico: public Anfibio, Domestico{
 protected:
     bool anfibioDomestico;
@@ -175,6 +200,11 @@ public:
     bool getAnfibioDomestico();
     void setAnfibioDomestico(bool anfibioDomestico);
 };
+
+
+
+
+//Declaraçao da classe ReptilExotico
 
 class ReptilExotico: public Reptil, Exotico{
 protected:
@@ -186,6 +216,11 @@ public:
     void setReptilExotico(bool reptilExotico);
 };
 
+
+
+
+//Declaraçao da classe ReptilNativo
+
 class ReptilNativo: public Reptil, Nativo{
 protected:
     bool reptilNativo;
@@ -195,6 +230,12 @@ public:
     bool getReptilNativo();
     void setReptilNativo(bool reptilNativo);
 };
+
+
+
+
+
+//Declaraçao da classe ReptilDomestico
 
 class ReptilDomestico: public Reptil, Domestico{
 protected:
@@ -206,6 +247,11 @@ public:
     void setReptilDomestico(bool reptilDomestico);
 };
 
+
+
+
+//Declaraçao da classe AveExotico
+
 class AveExotico: public Ave, Exotico{
 protected:
     bool aveExotico;
@@ -215,6 +261,11 @@ public:
     bool getAveExotico();
     void setAveExotico(bool aveExotico);
 };
+
+
+
+
+//Declaraçao da classe AveNativo
 
 class AveNativo: public Ave, Nativo{
 protected:
@@ -226,6 +277,10 @@ public:
     void setAveNativo(bool aveNativo);
 };
 
+
+
+//Declaraçao da classe AveDomestico
+
 class AveDomestico: public Ave, Domestico{
 protected:
     bool aveDomestico;
@@ -235,6 +290,10 @@ public:
     bool getAveDomestico();
     void setAveDomestico(bool aveDomestico);
 };
+
+
+
+//Declaraçao da classe MamiferoExotico
 
 class MamiferoExotico: public Mamifero, Exotico{
 protected:
@@ -246,6 +305,11 @@ public:
     void setMamiferoExotico(bool mamiferoExotico);
 };
 
+
+
+
+//Declaraçao da classe MamiferoNativo
+
 class MamiferoNativo: public Mamifero, Nativo{
 protected:
     bool mamiferoNativo;
@@ -255,6 +319,11 @@ public:
     bool getMamiferoNativo();
     void setMamiferoNativo(bool mamiferoNativo);
 };
+
+
+
+
+//Declaraçao da classe MamiferoDomestico
 
 class MamiferoDomestico: public Mamifero, Domestico{
 protected:

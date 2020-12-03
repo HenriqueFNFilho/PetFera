@@ -1,18 +1,28 @@
 #include <iostream>
 #include "animal.hpp"
+#include <vector>
 
 using namespace std;
 
 int main(){
+    AnfibioExotico* e = new AnfibioExotico(true, false);
+
+    vector<AnfibioExotico>anfibioExotico;
+
+    
+
+
+    cout << " " << e->getAnfibioExotico() << endl;
+
     Animal* m = new Animal();
     
-    Reptil* lagarto = new Reptil("Lipito", ReptilDomestico, "femea", 3, "parcial", "escamas");
+    Reptil* lagarto = new Reptil("Lipito", reptilDomestico, "femea", 3, "parcial", "escamas");
 
-    Mamifero* boto = new Mamifero("Pink", MamiferoDomestico, "femea", 10, false, "carnivoro", "aquático");
+    Mamifero* boto = new Mamifero("Pink", mamiferoDomestico, "femea", 10, false, "carnivoro", "aquático");
 
-    Ave* pardal = new Ave("Pasquale", AveDomestico, "macho", 1, "verde", true);
+    Ave* pardal = new Ave("Pasquale", aveDomestico, "macho", 1, "verde", true);
 
-    Anfibio* sapo = new Anfibio("Caco", AnfibioDomestico, "macho", 4, "completa", "ureia");
+    Anfibio* sapo = new Anfibio("Caco", anfibioDomestico, "macho", 4, "completa", "ureia");
 
     //teste da classe Animal
     m->setNome("Bidu"); 
