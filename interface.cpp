@@ -26,7 +26,7 @@ int main(int argc, char const *argv[]){
     string d;
     string e;
     bool k = false;
-    int vet, trat, anf, rep, av, mam, ani = 0;
+    int vet, trat, anf, rep, av, mam, ani, prof = 0;
 
     
 
@@ -63,6 +63,7 @@ int main(int argc, char const *argv[]){
                         cout << "formação: ";
                         cin >> d;
                         vet++;
+                        prof++;
 
                         veterinario = new Veterinario(vet, a, y, b, c, d);
                         profissional->push_back(veterinario);
@@ -70,7 +71,11 @@ int main(int argc, char const *argv[]){
                     else if (y==2){
                         cout << ":";
                         cin >> a;
-                        //veterinario->remVeterinarios(a);
+                        for(int i=0; i<prof; i++){
+                            if (profissional->at(i)->getNome()==a){
+                                 delete profissional->at(i);
+                            }
+                        }
                     }
                     else if (y==1){
                         //listarVeterinarios
@@ -102,13 +107,18 @@ int main(int argc, char const *argv[]){
                         cout << "formação: ";
                         cin >> d;
                         trat++;
+                        prof++;
                         tratador = new Tratador(vet, a, y, b, c) ;
                         profissional->push_back(tratador);
                     }
                     else if (y==2){
                         cout << ":";
                         cin >> a;
-                        //tratador->remTratadores(a);
+                        for(int i=0; i<prof; i++){
+                            if (profissional->at(i)->getNome()==a){
+                                 delete profissional->at(i);
+                            }
+                        }
                     }
                     else if (y==1){
                         //listar Tratadores
@@ -153,7 +163,11 @@ int main(int argc, char const *argv[]){
                     else if (y==2){
                         cout << "nome: ";
                         cin >> a;
-                        //anfibio->remAnfibios(a);
+                        for(int i=0; i<ani; i++){
+                            if (animal->at(i)->getNome()==a){
+                                 delete animal->at(i);
+                            }
+                        }
                     }
                     else if(y==1){
                         //listar Anfibios
@@ -190,7 +204,11 @@ int main(int argc, char const *argv[]){
                     else if (y==2){
                         cout << ":";
                         cin >> a;
-                        //reptil->remRepteis(a);
+                        for(int i=0; i<ani; i++){
+                            if (animal->at(i)->getNome()==a){
+                                 delete animal->at(i);
+                            }
+                        }
                     }
                     else if (y==1) {
                         //reptil->listarRepteis();
@@ -232,7 +250,11 @@ int main(int argc, char const *argv[]){
                     else if (y==2){
                         cout << ":";
                         cin >> a;
-                        //ave->remAves(a);
+                        for(int i=0; i<ani; i++){
+                            if (animal->at(i)->getNome()==a){
+                                 delete animal->at(i);
+                            }
+                        }
                     }
                     else if (y==1){
                         //listar Aves;
