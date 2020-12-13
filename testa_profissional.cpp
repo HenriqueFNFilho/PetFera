@@ -12,9 +12,9 @@ int main(){
 
 
     //teste da classe Profissional
-    p->setNome("Henrique Filho");
+    p->criarProfissional();
 
-    cout << p->getNome() << endl;
+    p->listarProfissional();
 
 
 

@@ -5,8 +5,7 @@
 #include<string>
 #include<ostream>
 
-using std::string;
-using std::ostream;
+
 
 using namespace std;
 
@@ -18,6 +17,7 @@ private:
     string nome;
     int idade;
     string genero;
+    vector<Profissional*>profissional;
     
 public:
     Profissional();
@@ -31,6 +31,11 @@ public:
     void setIdade(int idade);
     string getGenero();
     void setGenero(string genero);
+    vector<Profissional*>getProfissional();
+    void criarProfissional();
+    void removeProfissional(string nome);
+    void inserirProfissional(Profissional* novo);
+    void listarProfissional();
     friend ostream& operator<< (ostream& o, Profissional& profissional);
     
     
@@ -42,6 +47,7 @@ public:
 class Tratador: public Profissional{
 private:
     string habilidade;               //alimentador, lavador, limpador (limpa os excrementos)
+    vector<Tratador*>tratador;
 public:
     Tratador();
     Tratador(int id, string nome, int idade, string genero, string habilidade);
@@ -49,7 +55,11 @@ public:
     string getHabilidade();
     void setHabilidade(string habilidade);
 	friend ostream& operator<< (ostream &o, Tratador& tratador);
-    void criaTratador();
+    vector<Tratador*>getTratador();
+    void criarTratador();
+    void removeTratador(string nome);
+    void inserirTratador(Tratador* novo);
+    void listarTratador();
 
     
 };
@@ -61,6 +71,7 @@ class Veterinario: public Profissional{
 private:
     string especialidade;                //especialização em mamíferos, répteis, anfíbios, ou aves
     string formacao;                     //graduação, mestrado, doutorado
+    vector<Veterinario*>veterinario;
 public:
     Veterinario();
     Veterinario(int id, string nome, int idade, string genero, string especialidade, string formacao);
@@ -70,6 +81,11 @@ public:
     string getFormacao();
     void setFormacao(string formacao);
 	friend ostream& operator<< (ostream &o, Veterinario& veterinario);
+    vector<Veterinario*>getVeterinario();
+    void criarVeterinario();
+    void removeVeterinario(string nome);
+    void inserirVeterinario(Veterinario* novo);
+    void listarVeterinario();
 };
 
 

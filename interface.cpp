@@ -6,10 +6,10 @@
 using namespace std;
 
 int main(int argc, char const *argv[]){
-    vector<Profissional*> *profissional = new vector<Profissional*>;
 	
-    Profissional* tratador = new Tratador();
-    Profissional* veterinario = new Veterinario();
+    Tratador* tratador = new Tratador();
+    Veterinario* veterinario = new Veterinario();
+
 
     vector<Animal*> *animal = new vector<Animal*>;
 
@@ -26,22 +26,19 @@ int main(int argc, char const *argv[]){
     string d;
     string e;
     bool k = false;
-    int vet, trat, anf, rep, av, mam, ani, prof = 0;
+    int anf, rep, av, mam, ani = 0;
 
     
 
     do{
         
-        cout << "[3]Empresa"<< endl << "[2]Profissionais"<< endl << "[1]Animais" << endl << "[0]Sair"<< endl << ":";
+        cout << "[2]Profissionais"<< endl << "[1]Animais" << endl << "[0]Sair"<< endl << ":";
         cin >> x;
-        if(x!=0 && x!=1 && x!=2 && x!=3){
+        if(x!=0 && x!=1 && x!=2){
             cout << "Digite um valor válido!" << endl;
         }
-        else if(x==1 || x==2 || x==3){
-            if(x==3){
-                
-            }
-            else if(x==2){
+        else if(x==1 || x==2){
+            if(x==2){
                 do{
                     cout << "[2]Veterinario" << endl << "[1]Tratador" << endl << "[0]Sair" << endl << ":";
                     cin >> y;
@@ -52,39 +49,19 @@ int main(int argc, char const *argv[]){
                         cin >> y;
                     }while(y!=0 && y!=1 && y!= 2 && y!=3);
                     if(y==3){
-                        cout << "nome: ";
-                        cin >> a;
-                        cout << "idade: ";
-                        cin >> y;
-                        cout << "sexo: ";
-                        cin >> b;
-                        cout << "especialidade: ";
-                        cin >> c;
-                        cout << "formação: ";
-                        cin >> d;
-                        vet++;
-                        prof++;
-
-                        veterinario = new Veterinario(vet, a, y, b, c, d);
-                        profissional->push_back(veterinario);
+                        //inserir veterinario
+                        veterinario->criarVeterinario();
                     }
                     else if (y==2){
-                        cout << ":";
-                        cin >> a;
-                        for(int i=0; i<prof; i++){
-                            if (profissional->at(i)->getNome()==a){
-                                 delete profissional->at(i);
-                            }
-                        }
+                        //remove veterinario
+                        cout << "Qual o nome do veterinario que deseja remover?: ";
+                        cin >> a; 
+                        veterinario->removeVeterinario(a);
                     }
                     else if (y==1){
-                        //listarVeterinarios
-                        for(int i=0; i<vet; i++){
-                            cout << profissional->at(i)->getId() << endl;
-                            cout << profissional->at(i)->getNome() << endl;
-                            cout << profissional->at(i)->getIdade() << endl;
-                            cout << profissional->at(i)->getGenero() << endl << endl;
-                        }
+                        //listar Veterinarios
+                        cout << endl << "Os tratadores são:" << endl;
+                        veterinario->listarVeterinario();
                     }
                     y=10;
                     
@@ -96,38 +73,19 @@ int main(int argc, char const *argv[]){
                         cin >> y;
                     }while(y!=0 && y!=1 && y!= 2 && y!=3);
                     if(y==3){
-                        cout << "nome: ";
-                        cin >> a;
-                        cout << "idade: ";
-                        cin >> y;
-                        cout << "sexo: ";
-                        cin >> b;
-                        cout << "habilidade: ";
-                        cin >> c;
-                        cout << "formação: ";
-                        cin >> d;
-                        trat++;
-                        prof++;
-                        tratador = new Tratador(vet, a, y, b, c) ;
-                        profissional->push_back(tratador);
+                        //inserir tratador
+                        tratador->criarTratador();
                     }
                     else if (y==2){
-                        cout << ":";
-                        cin >> a;
-                        for(int i=0; i<prof; i++){
-                            if (profissional->at(i)->getNome()==a){
-                                 delete profissional->at(i);
-                            }
-                        }
+                        //excluir Tratador
+                        cout << "Qual o nome do tratador que deseja remover?: ";
+                        cin >> a; 
+                        tratador->removeTratador(a);
                     }
                     else if (y==1){
-                        //listar Tratadores
-                        for(int i=0; i<trat; i++){
-                            cout << profissional->at(i)->getId() << endl;
-                            cout << profissional->at(i)->getNome() << endl;
-                            cout << profissional->at(i)->getIdade() << endl;
-                            cout << profissional->at(i)->getGenero() << endl << endl;
-                        }
+                        //listar Tratador
+                        cout << endl << "Os tratadores são:" << endl;
+                        tratador->listarTratador();
                     }
                     
                                       
