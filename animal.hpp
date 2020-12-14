@@ -1,13 +1,12 @@
 #pragma once
 #include<iostream>
+#include<vector>
 
 
 
 using namespace std;
 
-enum TipoDoAnimal
-{
-    anfibioExotico,
+/*enum otico,
     anfibioNativo,
     anfibioDomestico,
     reptilExotico,
@@ -20,28 +19,35 @@ enum TipoDoAnimal
     mamiferoNativo,
     mamiferoDomestico
 };
-
+*/
 
 
 //Declaraçao da classe Animal
 
 class Animal{
 protected:
+    int id;
     string nome;
-    TipoDoAnimal tipo;
     string genero;
     int idade;
+    vector<Animal*>animal;
 public:
     Animal();
-    Animal(string nome, TipoDoAnimal tipo, string genero, int idade);
+    Animal(int id, string nome, string genero, int idade);
     virtual ~Animal();
+    int getId();
+    void setId(int id);
     string getNome() const;
     void setNome(string nome);
     string getGenero();
     void setGenero(string genero);
     int getIdade();
     void setIdade(int idade);
-    TipoDoAnimal getTipo();
+    vector<Animal*>getAnimal();
+    void criarAnimal();
+    void removeAnimal(string nome);
+    void inserirAnimal(Animal* novo);
+    void listarAnimal();
 };
 
 
@@ -51,14 +57,20 @@ class Anfibio: public Animal{
 protected:
     string trocapele;              //troca de pele parcial
     string excrecao;               //excrementam ureia
+    vector<Anfibio*>anfibio;
 public:
     Anfibio();
-    Anfibio(string nome, TipoDoAnimal tipo, string genero, int idade, string trocapele, string excrecao);
+    Anfibio(int id, string nome, string genero, int idade, string trocapele, string excrecao);
     virtual ~Anfibio();
     string getTrocapele() const;
     void setTrocapele(string trocapele);
     string getExcrecao() const;
     void setExcrecao(string excrecao);
+    vector<Anfibio*>getAnfibio();
+    void criarAnfibio();
+    void removeAnfibio(string nome);
+    void inserirAnfibio(Anfibio* novo);
+    void listarAnfibio();
 };
 
 
@@ -68,14 +80,20 @@ class Reptil: public Animal{
 protected:
     string ecdise;               //troca completa de pele
     string tipopele;             //escama, placa dermica, casco
+    vector<Reptil*>reptil;
 public:
     Reptil();
-    Reptil(string nome, TipoDoAnimal tipo, string genero, int idade, string ecdise, string tipopele);
+    Reptil(int id, string nome, string genero, int idade, string ecdise, string tipopele);
     virtual ~Reptil();
     string getEcdise();
     void setEcdise(string ecdise);
     string getTipopele();
     void setTipopele(string tipopele);
+    vector<Reptil*>getReptil();
+    void criarReptil();
+    void removeReptil(string nome);
+    void inserirReptil(Reptil* novo);
+    void listarReptil();
 };
 
 
@@ -85,14 +103,20 @@ class Ave: public Animal{
 protected:
     string cor;
     bool voando;
+    vector<Ave*>ave;
 public:
     Ave();
-    Ave(string nome, TipoDoAnimal tipo, string genero, int idade, string cor, bool voando);
+    Ave(int id, string nome, string genero, int idade, string cor, bool voando);
     virtual ~Ave();
     string getCor();
     void setCor(string cor);
     bool getVoando();
     void setVoando(bool voando);
+    vector<Ave*>getAve();
+    void criarAve();
+    void removeAve(string nome);
+    void inserirAve(Ave* novo);
+    void listarAve();
 };
 
 
@@ -103,9 +127,10 @@ protected:
     bool amamentando;              //em fase de amamentação
     string dieta;                  //carnivoro, onivoro, herbivoro
     string patas;                  //bipede, quadrupede
+    vector<Mamifero*>mamifero;
 public:
     Mamifero();
-    Mamifero(string nome, TipoDoAnimal tipo, string genero, int idade, bool amamentando, string dieta, string patas);
+    Mamifero(int id, string nome, string genero, int idade, bool amamentando, string dieta, string patas);
     virtual ~Mamifero();
     bool getAmamentando();
     void setAmamentando(bool amamentando);
@@ -113,6 +138,11 @@ public:
     void setDieta(string dieta);
     string getPatas();
     void setPatas(string patas);
+    vector<Mamifero*>getMamifero();
+    void criarMamifero();
+    void removeMamifero(string nome);
+    void inserirMamifero(Mamifero* novo);
+    void listarMamifero();
 };
 
 

@@ -8,12 +8,19 @@ using namespace std;
 //Implementação da classe Animal
 Animal::Animal(){
     this->nome = "Null";
-	this->tipo = tipo;
 }
 
-Animal::Animal(string nome, TipoDoAnimal tipo, string genero, int idade):nome(nome), tipo(tipo), genero(genero), idade(idade){}
+Animal::Animal(int id, string nome, string genero, int idade):id(id), nome(nome), genero(genero), idade(idade){}
 
 Animal::~Animal(){}
+
+int Animal::getId(){
+	return this->id;
+}
+
+void Animal::setId(int id){
+	this->id = id;
+}
 
 string Animal::getNome() const{
     return this->nome;
@@ -35,8 +42,55 @@ void Animal::setIdade(int idade){
     this->idade = idade;
 }
 
-TipoDoAnimal Animal::getTipo() {
-	return this->tipo;
+vector<Animal*> Animal::getAnimal(){
+	return this->animal;
+}
+
+void Animal::criarAnimal(){
+	int cA_id;
+    string cA_nome;
+	string cA_genero;
+    int cA_idade;
+    int aux = 1;
+
+    do{
+		cout << "ID: ";
+		cin >> cA_id;
+    	cout << "Nome: ";
+    	cin >> cA_nome;
+    	cout << "Idade: ";
+		cin >> cA_idade;
+		cout << "Genero: ";
+		cin >> cA_genero;
+    
+    	Animal* criado = new Animal(cA_id, cA_nome, cA_genero ,cA_idade);
+
+    	this->inserirAnimal(criado);
+
+    	cout << "[1]Inserir outro, [0]Sair:  ";
+    	cin >> aux;
+
+    }while(aux == 1);
+}
+
+void Animal::removeAnimal(string nome){
+	int y = animal.size();
+     for(int x = 0; x < (y-1); x++){
+         if(this->animal.at(x)->getNome() == nome){
+            this->animal.erase(this->animal.begin()+x);
+         }
+     }
+}
+
+void Animal::inserirAnimal(Animal* novo){
+	this->animal.push_back(novo);
+}
+
+void Animal::listarAnimal(){
+	for(auto& x: this->animal){
+        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() <<endl;
+		cout << endl;
+    }
 }
 
 
@@ -46,7 +100,7 @@ TipoDoAnimal Animal::getTipo() {
 
 Anfibio::Anfibio(){}
 
-Anfibio::Anfibio(string nome, TipoDoAnimal tipo, string genero, int idade, string trocapele, string excrecao): Animal(nome, tipo, genero, idade), trocapele(trocapele), excrecao(excrecao){}
+Anfibio::Anfibio(int id, string nome, string genero, int idade, string trocapele, string excrecao): Animal(id, nome, genero, idade), trocapele(trocapele), excrecao(excrecao){}
 
 Anfibio::~Anfibio()
 {
@@ -65,6 +119,62 @@ void Anfibio::setExcrecao(string excrecao){
     this->excrecao = excrecao;
 }
 
+vector<Anfibio*> Anfibio::getAnfibio(){
+	return this->anfibio;
+}
+
+void Anfibio::criarAnfibio(){
+	int cAnf_id;
+    string cAnf_nome;
+    int cAnf_idade;
+    string cAnf_genero;
+	string cAnf_trocapele;
+	string cAnf_excrecao;
+    int aux = 1;
+
+    do{
+    cout << "Id: ";
+    cin >> cAnf_id;
+    cout << "Nome: ";
+    cin >> cAnf_nome;
+    cout << "Idade: ";
+	cin >> cAnf_idade;
+	cout << "Genero: ";
+	cin >> cAnf_genero;
+	cout << "Troca de pele: ";
+	cin >> cAnf_trocapele;
+	cout << "Tipo de excreção: ";
+	cin >> cAnf_excrecao;
+    
+    Anfibio* criado = new Anfibio(cAnf_id, cAnf_nome, cAnf_genero, cAnf_idade, cAnf_trocapele, cAnf_excrecao);
+
+    this->inserirAnfibio(criado);
+
+    cout << "[1]Inserir outro, [0]Sair:  ";
+    cin >> aux;
+
+    }while(aux == 1);
+}
+
+void Anfibio::removeAnfibio(string nome){
+	int y = anfibio.size();
+     for(int x = 0; x < (y-1); x++){
+         if(this->anfibio.at(x)->getNome() == nome){
+            this->anfibio.erase(this->anfibio.begin()+x);
+         }
+     }
+}
+
+void Anfibio::inserirAnfibio(Anfibio* novo){
+	this->anfibio.push_back(novo);
+}
+
+void Anfibio::listarAnfibio(){
+	for(auto& x: this->anfibio){
+        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getTrocapele() << endl << x->getExcrecao() << endl;
+		cout << endl;
+    }
+}
 
 
 
@@ -73,7 +183,7 @@ void Anfibio::setExcrecao(string excrecao){
 
 Reptil::Reptil(){}
 
-Reptil::Reptil(string nome, TipoDoAnimal tipo,string genero, int idade, string ecdise, string tipopele): Animal(nome, tipo, genero, idade), ecdise(ecdise), tipopele(tipopele){}
+Reptil::Reptil(int id, string nome,string genero, int idade, string ecdise, string tipopele): Animal(id, nome, genero, idade), ecdise(ecdise), tipopele(tipopele){}
 
 
 Reptil::~Reptil()
@@ -93,12 +203,69 @@ void Reptil::setTipopele(string tipopele){
     this->tipopele = tipopele;
 }
 
+vector<Reptil*> Reptil::getReptil(){
+	return this->reptil;
+}
+
+void Reptil::criarReptil(){
+	int cR_id;
+    string cR_nome;
+    int cR_idade;
+    string cR_genero;
+	string cR_ecdise;
+	string cR_tipopele;
+    int aux = 1;
+
+    do{
+    cout << "Id: ";
+    cin >> cR_id;
+    cout << "Nome: ";
+    cin >> cR_nome;
+    cout << "Idade: ";
+	cin >> cR_idade;
+	cout << "Genero: ";
+	cin >> cR_genero;
+	cout << "Ecdise: ";
+	cin >> cR_ecdise;
+	cout << "Tipo de pele: ";
+	cin >> cR_tipopele;
+    
+    Reptil* criado = new Reptil(cR_id, cR_nome, cR_genero, cR_idade ,cR_ecdise, cR_tipopele);
+
+    this->inserirReptil(criado);
+
+    cout << "[1]Inserir outro, [0]Sair:  ";
+    cin >> aux;
+
+    }while(aux == 1);
+}
+
+void Reptil::removeReptil(string nome){
+	int y = reptil.size();
+     for(int x = 0; x < (y-1); x++){
+         if(this->reptil.at(x)->getNome() == nome){
+            this->reptil.erase(this->reptil.begin()+x);
+         }
+     }
+}
+
+void Reptil::inserirReptil(Reptil* novo){
+	this->reptil.push_back(novo);
+}
+
+void Reptil::listarReptil(){
+	for(auto& x: this->reptil){
+        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getEcdise() << endl << x->getTipopele() << endl;
+		cout << endl;
+    }
+}
+
 
 //Implementação da classe Ave
 
 Ave::Ave(){}
 
-Ave::Ave(string nome, TipoDoAnimal tipo, string genero, int idade, string cor, bool voando): Animal(nome, tipo, genero, idade), cor(cor), voando(voando){}
+Ave::Ave(int id, string nome, string genero, int idade, string cor, bool voando): Animal(id, nome, genero, idade), cor(cor), voando(voando){}
 
 
 Ave::~Ave(){}
@@ -115,6 +282,81 @@ bool Ave::getVoando(){
 void Ave::setVoando(bool voando){
     this->voando = voando;
 }
+vector<Ave*> Ave::getAve(){
+	return this->ave;
+}
+
+void Ave::criarAve(){
+	int cAve_id;
+    string cAve_nome;
+    int cAve_idade;
+    string cAve_genero;
+	string cAve_cor;
+	bool cAve_voando;
+    int aux = 1;
+	char letra = 'n';
+
+    do{
+    cout << "Id: ";
+    cin >> cAve_id;
+    cout << "Nome: ";
+    cin >> cAve_nome;
+    cout << "Idade: ";
+	cin >> cAve_idade;
+	cout << "Genero: ";
+	cin >> cAve_genero;
+	cout << "Cor: ";
+	cin >> cAve_cor;
+	cout << "Apta a voar? - S/s(sim) - N/n(não): ";
+	cin >> letra;
+	if(letra == 'S' || letra == 's'){
+        cAve_voando = true;
+    }
+    else if (letra == 'N' || letra == 'n')    {
+        cAve_voando = false;
+    }
+	else{
+		cout << "valor incorreto" << endl;
+	}
+	
+	
+
+    
+    Ave* criado = new Ave(cAve_id, cAve_nome, cAve_genero, cAve_idade, cAve_cor, cAve_voando);
+
+    this->inserirAve(criado);
+
+    cout << "[1]Inserir outro, [0]Sair:  ";
+    cin >> aux;
+
+    }while(aux == 1);
+}
+
+void Ave::removeAve(string nome){
+	int y = ave.size();
+     for(int x = 0; x < (y-1); x++){
+         if(this->ave.at(x)->getNome() == nome){
+            this->ave.erase(this->ave.begin()+x);
+         }
+     }
+}
+
+void Ave::inserirAve(Ave* novo){
+	this->ave.push_back(novo);
+}
+
+void Ave::listarAve(){
+	for(auto& x: this->ave){
+        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getCor() << endl;
+		if(x->getVoando() == 1){
+            cout << "Está voando" << endl;
+        }
+        else if (x->getVoando()==0){
+            cout << "Não está voando" << endl;
+        }
+		cout << endl;
+    }
+}
 
 
 
@@ -122,7 +364,7 @@ void Ave::setVoando(bool voando){
 
 Mamifero::Mamifero(){}
 
-Mamifero::Mamifero(string nome, TipoDoAnimal tipo, string genero, int idade, bool amamentando, string dieta, string patas): Animal(nome, tipo, genero, idade), amamentando(amamentando), dieta(dieta), patas(patas){}
+Mamifero::Mamifero(int id, string nome, string genero, int idade, bool amamentando, string dieta, string patas): Animal(id, nome, genero, idade), amamentando(amamentando), dieta(dieta), patas(patas){}
 
 
 Mamifero::~Mamifero(){}
@@ -144,6 +386,81 @@ string Mamifero::getPatas(){
 }
 void Mamifero::setPatas(string patas){
     this->patas = patas;
+}
+vector<Mamifero*> Mamifero::getMamifero(){
+	return this->mamifero;
+}
+
+void Mamifero::criarMamifero(){
+	int cM_id;
+    string cM_nome;
+    int cM_idade;
+    string cM_genero;
+	bool cM_amamentando;
+	string cM_dieta;
+	string cM_patas;
+	char letra = 'n';
+    int aux = 1;
+
+    do{
+    	cout << "Id: ";
+    	cin >> cM_id;
+    	cout << "Nome: ";
+    	cin >> cM_nome;
+    	cout << "Idade: ";
+		cin >> cM_idade;
+		cout << "Genero: ";
+		cin >> cM_genero;
+		cout << "Amamentando? - S/s(sim) - N/n(não): ";
+		cin >> letra;
+		if(letra == 'S' || letra == 's'){
+        	cM_amamentando = true;
+    	}
+    	else if (letra == 'N' || letra == 'n')    {
+    	    cM_amamentando = false;
+    	}
+		else{
+			cout << "valor incorreto" << endl;
+		}
+		cout << "Dieta: ";
+		cin >> cM_dieta;
+		cout << "Posição de andar: ";
+		cin >> cM_patas;
+
+	    Mamifero* criado = new Mamifero(cM_id, cM_nome, cM_genero, cM_idade, cM_amamentando, cM_dieta, cM_patas);
+
+    	this->inserirMamifero(criado);
+
+    	cout << "[1]Inserir outro, [0]Sair:  ";
+    	cin >> aux;
+
+    }while(aux == 1);
+}
+
+void Mamifero::removeMamifero(string nome){
+	int y = mamifero.size();
+     for(int x = 0; x < (y-1); x++){
+         if(this->mamifero.at(x)->getNome() == nome){
+            this->mamifero.erase(this->mamifero.begin()+x);
+         }
+     }
+}
+
+void Mamifero::inserirMamifero(Mamifero* novo){
+	this->mamifero.push_back(novo);
+}
+
+void Mamifero::listarMamifero(){
+	for(auto& x: this->mamifero){
+        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getDieta() << endl << x->getPatas() << endl;
+		if(x->getAmamentando() == 1){
+            cout << "Está amamentando" << endl;
+        }
+        else if (x->getAmamentando()==0){
+            cout << "Não está amamentando" << endl;
+        }
+		cout << endl;
+    }
 }
 
 

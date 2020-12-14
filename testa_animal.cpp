@@ -16,13 +16,13 @@ int main(){
 
     Animal* m = new Animal();
     
-    Reptil* lagarto = new Reptil("Lipito", reptilDomestico, "femea", 3, "parcial", "escamas");
+    Reptil* lagarto = new Reptil(123, "Lipito", "femea", 3, "parcial", "escamas");
 
-    Mamifero* boto = new Mamifero("Pink", mamiferoDomestico, "femea", 10, false, "carnivoro", "aquático");
+    Mamifero* boto = new Mamifero(1234, "Pink", "femea", 10, false, "carnivoro", "aquático");
 
-    Ave* pardal = new Ave("Pasquale", aveDomestico, "macho", 1, "verde", true);
+    Ave* pardal = new Ave(12345, "Pasquale", "macho", 1, "verde", true);
 
-    Anfibio* sapo = new Anfibio("Caco", anfibioDomestico, "macho", 4, "completa", "ureia");
+    Anfibio* sapo = new Anfibio(123456, "Caco", "macho", 4, "completa", "ureia");
 
     //teste da classe Animal
     m->setNome("Bidu"); 

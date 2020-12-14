@@ -16,10 +16,10 @@ int main(int argc, char const *argv[])
 	Profissional* tratador = new Tratador(06, "Bolsonaro", 67, "feminino", "limpador de fezes");
 	Profissional* veterinario = new Veterinario(07, "Dilma", 68, "feminino", "equinos", "mestre");
 
-	Animal* reptil = new Reptil("Shaokan",reptilDomestico,"feminino", 12, "4 meses", "escamas");
-	Animal* anfibio = new Anfibio("Cururu",anfibioExotico,"masculino", 5, "2 meses", "escamas");
-	Animal* ave = new Ave("Pegeotto",aveNativo,"feminino", 10, "Marron", true);
-	Animal* mamifero = new Mamifero("Peppa",mamiferoDomestico,"feminino", 6, true, "Proteina", "4");
+	Animal* reptil = new Reptil(123,"Shaokan","feminino", 12, "4 meses", "escamas");
+	Animal* anfibio = new Anfibio(1234,"Cururu", "masculino", 5, "2 meses", "escamas");
+	Animal* ave = new Ave(12345,"Pegeotto", "feminino", 10, "Marron", true);
+	Animal* mamifero = new Mamifero(123456, "Peppa", "feminino", 6, true, "Proteina", "4");
 	
 	//pondo os dados na última posição do vetor
 	animal->push_back(reptil);

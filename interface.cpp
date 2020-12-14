@@ -10,23 +10,14 @@ int main(int argc, char const *argv[]){
     Tratador* tratador = new Tratador();
     Veterinario* veterinario = new Veterinario();
 
-
-    vector<Animal*> *animal = new vector<Animal*>;
-
-    Animal* reptil = new Reptil();
-	Animal* anfibio = new Anfibio();
-	Animal* ave = new Ave();
-	Animal* mamifero = new Mamifero();
+    Reptil* reptil = new Reptil();
+	Anfibio* anfibio = new Anfibio();
+	Ave* ave = new Ave();
+	Mamifero* mamifero = new Mamifero();
 
     int x;
     int y;
     string a;
-    string b;
-    string c;
-    string d;
-    string e;
-    bool k = false;
-    int anf, rep, av, mam, ani = 0;
 
     
 
@@ -103,37 +94,18 @@ int main(int argc, char const *argv[]){
                         cin >> y;
                     }while(y!=0 && y!=1 && y!= 2 && y!=3);
                     if(y==3){
-                        cout << "nome: ";
-                        cin >> a;
-                        cout << "genero: ";
-                        cin >> b;
-                        cout << "idade: ";
-                        cin >> y;
-                        cout << "troca de pele"; 
-                        cin >> c;
-                        cout << "excreção";
-                        cin >> d;
-                        anf++;
-                        ani++;
-                        anfibio = new Anfibio(a, anfibioDomestico, b, y, c, d);
-                        animal->push_back(anfibio);
+                        //inserir anfibio
+                        anfibio->criarAnfibio();
                     }
                     else if (y==2){
-                        cout << "nome: ";
-                        cin >> a;
-                        for(int i=0; i<ani; i++){
-                            if (animal->at(i)->getNome()==a){
-                                 delete animal->at(i);
-                            }
-                        }
+                        //excluir anfibio
+                        cout << "Qual o nome do anfibio que deseja remover?: ";
+                        cin >> a; 
+                        anfibio->removeAnfibio(a);
                     }
                     else if(y==1){
                         //listar Anfibios
-                        for(int i=0; i<anf; i++){
-                            cout << animal->at(i)->getNome() << endl;
-                            cout << animal->at(i)->getIdade() << endl;
-                            cout << animal->at(i)->getGenero() << endl;
-                        }
+                        anfibio->listarAnfibio();
                     }
                     y=10;             // para não entrar em outro if
                     
@@ -144,40 +116,20 @@ int main(int argc, char const *argv[]){
                         cin >> y;
                     }while(y!=0 && y!=1 && y!= 2 && y!=3);
                     if(y==3){
-                        cout << "nome: ";
-                        cin >> a;
-                        cout << "genero: ";
-                        cin >> b;
-                        cout << "idade: ";
-                        cin >> y;
-                        cout << "Ecdise: ";
-                        cin >> c;
-                        cout <<"Tipo de pele: ";
-                        cin >> d;
-                        rep++;
-                        ani++;
-                        reptil = new Reptil(a, reptilExotico, b, 3, c, d);
-                        animal->push_back(reptil);
+                        //criar reptil
+                        reptil->criarReptil();
                     }
                     else if (y==2){
-                        cout << ":";
-                        cin >> a;
-                        for(int i=0; i<ani; i++){
-                            if (animal->at(i)->getNome()==a){
-                                 delete animal->at(i);
-                            }
-                        }
+                        cout << "Qual o nome do reptil que deseja remover?: ";
+                        cin >> a; 
+                        reptil->removeReptil(a);
                     }
                     else if (y==1) {
                         //reptil->listarRepteis();
-                        for(int i=0; i<rep; i++){
-                            cout << animal->at(i)->getNome() << endl;
-                            cout << animal->at(i)->getIdade() << endl;
-                            cout << animal->at(i)->getGenero() << endl;
-                        }
+                        reptil->listarReptil();
                     }
 
-                    y=10;                //impedir que retorne aos if'a         
+                    y=10;                //impedir que retorne aos if's        
                   
                     
                 }
@@ -187,40 +139,18 @@ int main(int argc, char const *argv[]){
                         cin >> y;
                     }while(y!=0 && y!=1 && y!= 2 && y!=3);
                     if(y==3){
-                        cout << "nome: ";
-                        cin >> a;
-                        //ave->setNome(a);
-                        cout << "genero: ";
-                        cin >> b;
-                        //ave->setGenero(a);
-                        cout << "idade: ";
-                        cin >> y;
-                        //ave->setIdade(y);
-                        cout << "Cor: ";
-                        cin >> c;
-                        cout << "Voando: ";
-                        cin >> d;
-                        av++;
-                        ani++;
-                        ave = new Ave(a, aveDomestico, b, 3, c, k);
-                        animal->push_back(ave);
+                        //cria ave
+                        ave->criarAve();
                     }
                     else if (y==2){
-                        cout << ":";
-                        cin >> a;
-                        for(int i=0; i<ani; i++){
-                            if (animal->at(i)->getNome()==a){
-                                 delete animal->at(i);
-                            }
-                        }
+                        //remove ave
+                        cout << "Qual o nome da ave que deseja remover?: ";
+                        cin >> a; 
+                        ave->removeAve(a);
                     }
                     else if (y==1){
                         //listar Aves;
-                         for(int i=0; i<av; i++){
-                            cout << animal->at(i)->getNome() << endl;
-                            cout << animal->at(i)->getIdade() << endl;
-                            cout << animal->at(i)->getGenero() << endl;
-                        }
+                        ave->listarAve();
                     }
                     y=10;
                 }
@@ -230,43 +160,18 @@ int main(int argc, char const *argv[]){
                         cin >> y;
                     }while(y!=0 && y!=1 && y!= 2 && y!=3);
                     if(y==3){
-                        cout << "nome: ";
-                        cin >> a;
-                        //mamifero->setNome(a);
-                        cout << "genero: ";
-                        cin >> b;
-                        //mamifero->setGenero(a);
-                        cout << "idade: ";
-                        cin >> y;
-                        //mamifero->setIdade(y);
-                        cout << "Mamifero/Herbivoro/Onivoro";
-                        cin >> c;
-                        //mamifero->setDieta(a);
-                        cout << "Bipede/quadrupede: ";
-                        cin >> d;
-                        mam++;
-                        ani++;
-                        mamifero = new Mamifero(a, aveDomestico, b, 3, k, c, d);
-                        animal->push_back(mamifero);
+                        //insere mamífero
+                        mamifero->criarMamifero();
                     }
                     else if (y==2){
-                        cout << ":";
-                        cin >> a;
-                        for(int i=0; i<ani; i++){
-                            if (animal->at(i)->getNome()==a){
-                                 delete animal->at(i);
-                            }
-                        }
+                        //remove mamífero
+                        cout << "Qual o nome do mamífero que deseja remover?: ";
+                        cin >> a; 
+                        mamifero->removeMamifero(a);
                     }
                     else if (y==1){
                         //listar Mamiferos
-                        for(int i=0; i<ani; i++){
-                            if (animal->at(i)->getTipo()==aveDomestico){
-                            cout << animal->at(i)->getNome() << endl;
-                            cout << animal->at(i)->getIdade() << endl;
-                            cout << animal->at(i)->getGenero() << endl;
-                            }
-                        }
+                        mamifero->listarMamifero();
                     }
 
                     y=10;
