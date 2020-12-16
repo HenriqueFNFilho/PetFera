@@ -1,6 +1,12 @@
 #include<iostream>
 #include "animal.hpp"
 #include "profissional.hpp"
+#include "mamifero.hpp"
+#include "anfibio.hpp"
+#include "reptil.hpp"
+#include "ave.hpp"
+#include "tratador.hpp"
+#include "veterinario.hpp"
 #include <vector>
 
 using namespace std;
