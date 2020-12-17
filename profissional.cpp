@@ -1,6 +1,7 @@
 #include <iomanip>
 #include "profissional.hpp"
 #include<iostream>
+#include<memory>
 
 using std::cin;
 using std::cout;
@@ -53,7 +54,7 @@ ostream& operator<< (ostream& o, Profissional& profissional){
 	return o;
 }
 
-vector<Profissional*> Profissional::getProfissional(){
+vector<shared_ptr<Profissional>> Profissional::getProfissional() const{
 	return this->profissional;
 }
 
@@ -74,7 +75,7 @@ void Profissional::criarProfissional(){
 	cout << "Genero: ";
 	cin >> cP_genero;
     
-    Profissional* criado = new Profissional(cP_id, cP_nome, cP_idade, cP_genero);
+    shared_ptr<Profissional> criado = make_shared<Profissional>(cP_id, cP_nome, cP_idade, cP_genero);
 
     this->inserirProfissional(criado);
 
@@ -93,7 +94,7 @@ void Profissional::removeProfissional(string nome){
      }
 }
 
-void Profissional::inserirProfissional(Profissional* novo){
+void Profissional::inserirProfissional(shared_ptr<Profissional> novo){
 	this->profissional.push_back(novo);
 }
 

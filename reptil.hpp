@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include "animal.hpp"
+#include<memory>
 
 //Declaraçao da classe Reptil
 
@@ -9,7 +10,7 @@ class Reptil: public Animal{
 protected:
     string ecdise;               //troca completa de pele
     string tipopele;             //escama, placa dermica, casco
-    vector<Reptil*>reptil;
+    vector<shared_ptr<Reptil>>reptil;
 public:
     Reptil();
     Reptil(int id, string nome, string genero, int idade, string ecdise, string tipopele);
@@ -18,9 +19,9 @@ public:
     void setEcdise(string ecdise);
     string getTipopele();
     void setTipopele(string tipopele);
-    vector<Reptil*>getReptil();
+    vector<shared_ptr<Reptil>>getReptil();
     void criarReptil();
     void removeReptil(string nome);
-    void inserirReptil(Reptil* novo);
+    void inserirReptil(shared_ptr<Reptil> novo);
     void listarReptil();
 };

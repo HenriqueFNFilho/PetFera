@@ -5,6 +5,7 @@
 
 #include<string>
 #include<ostream>
+#include<memory>
 
 
 
@@ -15,7 +16,7 @@ using namespace std;
 class Tratador: public Profissional{
 private:
     string habilidade;               //alimentador, lavador, limpador (limpa os excrementos)
-    vector<Tratador*>tratador;
+    vector<shared_ptr<Tratador>>tratador;
 public:
     Tratador();
     Tratador(int id, string nome, int idade, string genero, string habilidade);
@@ -23,10 +24,10 @@ public:
     string getHabilidade();
     void setHabilidade(string habilidade);
 	friend ostream& operator<< (ostream &o, Tratador& tratador);
-    vector<Tratador*>getTratador();
+    vector<shared_ptr<Tratador>>getTratador();
     void criarTratador();
     void removeTratador(string nome);
-    void inserirTratador(Tratador* novo);
+    void inserirTratador(shared_ptr<Tratador> novo);
     void listarTratador();
 
     

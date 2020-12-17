@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<vector>
+#include<memory>
 
 
 using namespace std;
@@ -15,7 +16,7 @@ protected:
     string nome;
     string genero;
     int idade;
-    vector<Animal*>animal;
+    vector<shared_ptr<Animal>>animal;
 public:
     Animal();
     Animal(int id, string nome, string genero, int idade);
@@ -28,9 +29,9 @@ public:
     void setGenero(string genero);
     int getIdade();
     void setIdade(int idade);
-    vector<Animal*>getAnimal();
+    vector<shared_ptr<Animal>>getAnimal();
     void criarAnimal();
     void removeAnimal(string nome);
-    void inserirAnimal(Animal* novo);
+    void inserirAnimal(shared_ptr<Animal> novo);
     void listarAnimal();
 };

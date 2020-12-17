@@ -4,6 +4,7 @@
 
 #include<string>
 #include<ostream>
+#include<memory>
 
 
 
@@ -17,7 +18,7 @@ private:
     string nome;
     int idade;
     string genero;
-    vector<Profissional*>profissional;
+    vector<shared_ptr<Profissional>>profissional;
     
 public:
     Profissional();
@@ -31,10 +32,10 @@ public:
     void setIdade(int idade);
     string getGenero();
     void setGenero(string genero);
-    vector<Profissional*>getProfissional();
+    vector<shared_ptr<Profissional>>getProfissional() const;
     void criarProfissional();
     void removeProfissional(string nome);
-    void inserirProfissional(Profissional* novo);
+    void inserirProfissional(shared_ptr<Profissional> novo);
     void listarProfissional();
     friend ostream& operator<< (ostream& o, Profissional& profissional);
     

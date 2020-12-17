@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include "animal.hpp"
+#include<memory>
 
 
 //Declaraçao da classe Mamíferos
@@ -11,7 +12,7 @@ protected:
     bool amamentando;              //em fase de amamentação
     string dieta;                  //carnivoro, onivoro, herbivoro
     string patas;                  //bipede, quadrupede
-    vector<Mamifero*>mamifero;
+    vector<shared_ptr<Mamifero>>mamifero;
 public:
     Mamifero();
     Mamifero(int id, string nome, string genero, int idade, bool amamentando, string dieta, string patas);
@@ -22,9 +23,9 @@ public:
     void setDieta(string dieta);
     string getPatas();
     void setPatas(string patas);
-    vector<Mamifero*>getMamifero();
+    vector<shared_ptr<Mamifero>>getMamifero();
     void criarMamifero();
     void removeMamifero(string nome);
-    void inserirMamifero(Mamifero* novo);
+    void inserirMamifero(shared_ptr<Mamifero> novo);
     void listarMamifero();
 };

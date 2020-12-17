@@ -42,7 +42,7 @@ void Animal::setIdade(int idade){
     this->idade = idade;
 }
 
-vector<Animal*> Animal::getAnimal(){
+vector<shared_ptr<Animal>> Animal::getAnimal(){
 	return this->animal;
 }
 
@@ -63,7 +63,7 @@ void Animal::criarAnimal(){
 		cout << "Genero: ";
 		cin >> cA_genero;
     
-    	Animal* criado = new Animal(cA_id, cA_nome, cA_genero ,cA_idade);
+    	shared_ptr<Animal> criado = make_shared<Animal>(cA_id, cA_nome, cA_genero ,cA_idade);
 
     	this->inserirAnimal(criado);
 
@@ -82,7 +82,7 @@ void Animal::removeAnimal(string nome){
      }
 }
 
-void Animal::inserirAnimal(Animal* novo){
+void Animal::inserirAnimal(shared_ptr<Animal> novo){
 	this->animal.push_back(novo);
 }
 

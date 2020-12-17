@@ -33,7 +33,7 @@ operator<< (ostream &o, Tratador& tratador){
 	return o;
 }
 
-vector<Tratador*> Tratador::getTratador(){
+vector<shared_ptr<Tratador>> Tratador::getTratador(){
     return this->tratador;
 }
 
@@ -57,7 +57,7 @@ void Tratador::criarTratador(){
 		cout << "Habilidade: ";
 		cin >> cT_habilidade;
     
-    	Tratador* criado = new Tratador(cT_id, cT_nome, cT_idade, cT_genero, cT_habilidade);
+    	shared_ptr<Tratador> criado = make_shared<Tratador>(cT_id, cT_nome, cT_idade, cT_genero, cT_habilidade);
 
     	this->inserirTratador(criado);
 
@@ -67,7 +67,7 @@ void Tratador::criarTratador(){
 
 }
 
-void Tratador::inserirTratador(Tratador* novo){
+void Tratador::inserirTratador(shared_ptr<Tratador> novo){
     this->tratador.push_back(novo);
 }
 

@@ -27,7 +27,7 @@ bool Ave::getVoando(){
 void Ave::setVoando(bool voando){
     this->voando = voando;
 }
-vector<Ave*> Ave::getAve(){
+vector<shared_ptr<Ave>> Ave::getAve(){
 	return this->ave;
 }
 
@@ -67,7 +67,7 @@ void Ave::criarAve(){
 	
 
     
-    Ave* criado = new Ave(cAve_id, cAve_nome, cAve_genero, cAve_idade, cAve_cor, cAve_voando);
+    shared_ptr<Ave> criado = make_shared<Ave>(cAve_id, cAve_nome, cAve_genero, cAve_idade, cAve_cor, cAve_voando);
 
     this->inserirAve(criado);
 
@@ -86,7 +86,7 @@ void Ave::removeAve(string nome){
      }
 }
 
-void Ave::inserirAve(Ave* novo){
+void Ave::inserirAve(shared_ptr<Ave> novo){
 	this->ave.push_back(novo);
 }
 

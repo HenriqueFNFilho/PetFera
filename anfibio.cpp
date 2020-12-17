@@ -29,7 +29,7 @@ void Anfibio::setExcrecao(string excrecao){
     this->excrecao = excrecao;
 }
 
-vector<Anfibio*> Anfibio::getAnfibio(){
+vector<shared_ptr<Anfibio>> Anfibio::getAnfibio(){
 	return this->anfibio;
 }
 
@@ -56,7 +56,7 @@ void Anfibio::criarAnfibio(){
 	cout << "Tipo de excreção: ";
 	cin >> cAnf_excrecao;
     
-    Anfibio* criado = new Anfibio(cAnf_id, cAnf_nome, cAnf_genero, cAnf_idade, cAnf_trocapele, cAnf_excrecao);
+    shared_ptr<Anfibio> criado = make_shared<Anfibio>(cAnf_id, cAnf_nome, cAnf_genero, cAnf_idade, cAnf_trocapele, cAnf_excrecao);
 
     this->inserirAnfibio(criado);
 
@@ -75,7 +75,7 @@ void Anfibio::removeAnfibio(string nome){
      }
 }
 
-void Anfibio::inserirAnfibio(Anfibio* novo){
+void Anfibio::inserirAnfibio(shared_ptr<Anfibio> novo){
 	this->anfibio.push_back(novo);
 }
 

@@ -30,7 +30,7 @@ void Reptil::setTipopele(string tipopele){
     this->tipopele = tipopele;
 }
 
-vector<Reptil*> Reptil::getReptil(){
+vector<shared_ptr<Reptil>> Reptil::getReptil(){
 	return this->reptil;
 }
 
@@ -57,7 +57,7 @@ void Reptil::criarReptil(){
 	cout << "Tipo de pele: ";
 	cin >> cR_tipopele;
     
-    Reptil* criado = new Reptil(cR_id, cR_nome, cR_genero, cR_idade ,cR_ecdise, cR_tipopele);
+    shared_ptr<Reptil> criado = make_shared<Reptil>(cR_id, cR_nome, cR_genero, cR_idade ,cR_ecdise, cR_tipopele);
 
     this->inserirReptil(criado);
 
@@ -76,7 +76,7 @@ void Reptil::removeReptil(string nome){
      }
 }
 
-void Reptil::inserirReptil(Reptil* novo){
+void Reptil::inserirReptil(shared_ptr<Reptil> novo){
 	this->reptil.push_back(novo);
 }
 

@@ -33,7 +33,7 @@ string Mamifero::getPatas(){
 void Mamifero::setPatas(string patas){
     this->patas = patas;
 }
-vector<Mamifero*> Mamifero::getMamifero(){
+vector<shared_ptr<Mamifero>> Mamifero::getMamifero(){
 	return this->mamifero;
 }
 
@@ -73,7 +73,7 @@ void Mamifero::criarMamifero(){
 		cout << "Posição de andar: ";
 		cin >> cM_patas;
 
-	    Mamifero* criado = new Mamifero(cM_id, cM_nome, cM_genero, cM_idade, cM_amamentando, cM_dieta, cM_patas);
+	    shared_ptr<Mamifero> criado = make_shared<Mamifero>(cM_id, cM_nome, cM_genero, cM_idade, cM_amamentando, cM_dieta, cM_patas);
 
     	this->inserirMamifero(criado);
 
@@ -92,7 +92,7 @@ void Mamifero::removeMamifero(string nome){
      }
 }
 
-void Mamifero::inserirMamifero(Mamifero* novo){
+void Mamifero::inserirMamifero(shared_ptr<Mamifero> novo){
 	this->mamifero.push_back(novo);
 }
 

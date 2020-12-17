@@ -41,7 +41,7 @@ operator<< (ostream &o, Veterinario& veterinario){
 	return o;
 }
 
-vector<Veterinario*> Veterinario::getVeterinario(){
+vector<shared_ptr<Veterinario>> Veterinario::getVeterinario(){
     return this->veterinario;
 }
 
@@ -68,7 +68,7 @@ void Veterinario::criarVeterinario(){
 		cout << "Formação: ";
 		cin >> cV_formacao;
     
-    	Veterinario* criado = new Veterinario(cV_id, cV_nome, cV_idade, cV_genero, cV_especialidade, cV_formacao);
+    	shared_ptr<Veterinario> criado = make_shared<Veterinario>(cV_id, cV_nome, cV_idade, cV_genero, cV_especialidade, cV_formacao);
 
     	this->inserirVeterinario(criado);
 
@@ -79,7 +79,7 @@ void Veterinario::criarVeterinario(){
 
 }
 
-void Veterinario::inserirVeterinario(Veterinario* novo){
+void Veterinario::inserirVeterinario(shared_ptr<Veterinario> novo){
     this->veterinario.push_back(novo);
 }
 
