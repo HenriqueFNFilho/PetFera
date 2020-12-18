@@ -28,4 +28,5 @@ public:
     void inserirAnfibio(shared_ptr<Anfibio> novo);
     void listarAnfibio();
     void gravaAnfibio();
+    void lerAnfibio();
 };

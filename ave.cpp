@@ -118,3 +118,15 @@ void Ave::gravaAve(){
 	}
 	arquivo.close();
 }
+
+void Ave::lerAve(){
+    fstream arquivo;
+	string linha;
+	arquivo.open("arqAve.txt",ios::in);    
+    if(arquivo.is_open()){
+    	while(getline(arquivo,linha, '-')){
+    		cout << linha << endl;
+    	}
+    }
+	arquivo.close();
+}

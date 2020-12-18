@@ -95,3 +95,15 @@ void Anfibio::gravaAnfibio(){
 	}
 	arquivo.close();
 }
+
+void Anfibio::lerAnfibio(){
+    fstream arquivo;
+	string linha;
+	arquivo.open("arqAnfibio.txt",ios::in);    
+    if(arquivo.is_open()){
+    	while(getline(arquivo,linha, '-')){
+    		cout << linha << endl;
+    	}
+    }
+	arquivo.close();
+}

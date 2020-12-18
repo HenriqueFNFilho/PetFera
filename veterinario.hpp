@@ -32,4 +32,5 @@ public:
     void inserirVeterinario(shared_ptr<Veterinario> novo);
     void listarVeterinario();
     void gravaVeterinario();
+    void lerVeterinario();
 };

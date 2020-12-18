@@ -30,5 +30,5 @@ public:
     void inserirTratador(shared_ptr<Tratador> novo);
     void listarTratador();
     void gravaTratador();
-    
+    void lerTratador();    
 };

@@ -25,4 +25,5 @@ public:
     void inserirReptil(shared_ptr<Reptil> novo);
     void listarReptil();
     void gravaReptil();
+    void lerReptil();
 };

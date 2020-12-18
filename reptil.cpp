@@ -100,3 +100,15 @@ void Reptil::gravaReptil(){
 	}
 	arquivo.close();
 }
+
+void Reptil::lerReptil(){
+    fstream arquivo;
+	string linha;
+	arquivo.open("arqReptil.txt",ios::in);    
+    if(arquivo.is_open()){
+    	while(getline(arquivo,linha, '-')){
+    		cout << linha << endl;
+    	}
+    }
+	arquivo.close();
+}

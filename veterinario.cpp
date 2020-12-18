@@ -108,3 +108,15 @@ void Veterinario::gravaVeterinario(){
 	}
 	arquivo.close();
 }
+
+void Veterinario::lerVeterinario(){
+	fstream arquivo;
+	string linha;
+	arquivo.open("arqVeterinario.txt",ios::in);    
+    if(arquivo.is_open()){
+    	while(getline(arquivo,linha, '-')){
+    		cout << linha << endl;
+    	}
+    }
+	arquivo.close();
+}

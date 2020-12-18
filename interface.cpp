@@ -8,7 +8,6 @@
 #include "tratador.hpp"
 #include "veterinario.hpp"
 #include <vector>
-#include <fstream>
 
 using namespace std;
 
@@ -25,10 +24,7 @@ int main(int argc, char const *argv[]){
     int x;
     int y;
     string a;
-    
-    fstream arquivo1, arquivo2, arquivo3, arquivo4, arquivo5, arquivo6;
-    string linha1, linha2, linha3, linha4, linha5, linha6;
-    
+
 
     do{
         
@@ -51,6 +47,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //inserir veterinario
                         veterinario->criarVeterinario();
+                        veterinario->gravaVeterinario();
                     }
                     else if (y==2){
                         //remove veterinario
@@ -60,8 +57,9 @@ int main(int argc, char const *argv[]){
                     }
                     else if (y==1){
                         //listar Veterinarios
-                        cout << endl << "Os tratadores são:" << endl;
-                        veterinario->listarVeterinario();
+                        cout << endl << "Os veterinarios são:" << endl;
+                        //veterinario->listarVeterinario();
+                        veterinario->lerVeterinario();
                     }
                     y=10;
                     
@@ -75,6 +73,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //inserir tratador
                         tratador->criarTratador();
+                        tratador->gravaTratador();
                     }
                     else if (y==2){
                         //excluir Tratador
@@ -85,7 +84,8 @@ int main(int argc, char const *argv[]){
                     else if (y==1){
                         //listar Tratador
                         cout << endl << "Os tratadores são:" << endl;
-                        tratador->listarTratador();
+                        //tratador->listarTratador();
+                        tratador->lerTratador();
                     }
                     
                                       
@@ -105,6 +105,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //inserir anfibio
                         anfibio->criarAnfibio();
+                        anfibio->gravaAnfibio();
                     }
                     else if (y==2){
                         //excluir anfibio
@@ -114,7 +115,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if(y==1){
                         //listar Anfibios
-                        anfibio->listarAnfibio();
+                        //anfibio->listarAnfibio();
+                        anfibio->lerAnfibio();
                     }
                     y=10;             // para não entrar em outro if
                     
@@ -127,6 +129,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //criar reptil
                         reptil->criarReptil();
+                        reptil->gravaReptil();
                     }
                     else if (y==2){
                         cout << "Qual o nome do reptil que deseja remover?: ";
@@ -134,8 +137,9 @@ int main(int argc, char const *argv[]){
                         reptil->removeReptil(a);
                     }
                     else if (y==1) {
-                        //reptil->listarRepteis();
-                        reptil->listarReptil();
+                        //listar Repteis
+                        //reptil->listarReptil();
+                        reptil->lerReptil();
                     }
 
                     y=10;                //impedir que retorne aos if's        
@@ -150,6 +154,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //cria ave
                         ave->criarAve();
+                        ave->gravaAve();
                     }
                     else if (y==2){
                         //remove ave
@@ -159,7 +164,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if (y==1){
                         //listar Aves;
-                        ave->listarAve();
+                        //ave->listarAve();
+                        ave->lerAve();
                     }
                     y=10;
                 }
@@ -171,6 +177,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //insere mamífero
                         mamifero->criarMamifero();
+                        mamifero->gravaMamifero();
                     }
                     else if (y==2){
                         //remove mamífero
@@ -180,7 +187,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if (y==1){
                         //listar Mamiferos
-                        mamifero->listarMamifero();
+                        //mamifero->listarMamifero();
+                        mamifero->lerMamifero();
                     }
 
                     y=10;
@@ -194,62 +202,6 @@ int main(int argc, char const *argv[]){
         
 
     }while(x!=0);
-    tratador->gravaTratador();
-    veterinario->gravaVeterinario();
-    anfibio->gravaAnfibio();
-    ave->gravaAve();
-    reptil->gravaReptil();
-    mamifero->gravaMamifero();
-    
-    arquivo1.open("arqTratador.txt",ios::in);
-    cout << "Tratadores: " << endl;
-    
-    if(arquivo1.is_open()){
-    	while(getline(arquivo1,linha1)){
-    		cout << linha1 << endl;
-    	}
-    }
-    
-    arquivo2.open("arqVeterinario.txt",ios::in);
-    cout << "Veterinarios: " << endl;
-    
-    if(arquivo2.is_open()){
-    	while(getline(arquivo2,linha2)){
-    		cout << linha2 << endl;
-    	}
-    }
-    arquivo3.open("arqAnfibio.txt",ios::in);
-    cout << "Anfibios : " << endl;
-    
-    if(arquivo3.is_open()){
-    	while(getline(arquivo3,linha3)){
-    		cout << linha3 << endl;
-    	}
-    }
-    arquivo4.open("arqAve.txt",ios::in);
-    cout << "Aves: " << endl;
-    
-    if(arquivo4.is_open()){
-    	while(getline(arquivo4,linha4)){
-    		cout << linha4 << endl;
-    	}
-    }
-    arquivo5.open("arqReptil.txt",ios::in);
-    cout << "Repteis : " << endl;
-    
-    if(arquivo5.is_open()){
-    	while(getline(arquivo5,linha5)){
-    		cout << linha5 << endl;
-    	}
-    }
-    arquivo6.open("arqMamifero.txt",ios::in);
-    cout << "Mamiferos: " << endl;
-    
-    if(arquivo6.is_open()){
-    	while(getline(arquivo6,linha6)){
-    		cout << linha6 << endl;
-    	}
-    }
 
     return 0;
 }

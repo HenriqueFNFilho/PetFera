@@ -123,3 +123,15 @@ void Mamifero::gravaMamifero(){
 	}
 	arquivo.close();
 }
+
+void Mamifero::lerMamifero(){
+	fstream arquivo;
+	string linha;
+	arquivo.open("arqMamifero.txt",ios::in);    
+    if(arquivo.is_open()){
+    	while(getline(arquivo,linha, '-')){
+    		cout << linha << endl;
+    	}
+    }
+	arquivo.close();
+}

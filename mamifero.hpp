@@ -29,4 +29,5 @@ public:
     void inserirMamifero(shared_ptr<Mamifero> novo);
     void listarMamifero();
     void gravaMamifero();
+    void lerMamifero();
 };

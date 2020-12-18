@@ -96,3 +96,15 @@ void Tratador::gravaTratador(){
 	}
 	arquivo.close();
 }
+
+void Tratador::lerTratador(){
+	fstream arquivo;
+	string linha;
+	arquivo.open("arqTratador.txt",ios::in);    
+    if(arquivo.is_open()){
+    	while(getline(arquivo,linha, '-')){
+    		cout << linha << endl;
+    	}
+    }
+	arquivo.close();
+}
