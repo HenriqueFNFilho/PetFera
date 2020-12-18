@@ -30,7 +30,7 @@ $ ./interface
 Foram corrigidos os erros de inserção, remoção e listagem dos vetores. As classe foram separadas em arquivos diferentes, para respeitar a modularização. 
 Foram utilizados ponteiros inteligente, para evitar o vazamento de memória. Foi adicionada a gravação em arquivos.
 
--- dificuldades encontradas/comentários gerais sobre a tarefa.
+Tivemos problemas ao tentar utilizar o conteúdo dos arquivos produzidos. Conseguimos, mas não como haviamos planejado. A falta de tempo para produzir foi uma constante, por isso nossas últimas energias foram gastas na gravação e leitura dos arquivos. Na primeira parte, encontramos dificuldades na escolha dos parâmetros e na últilização de vetor (ambos contornados). Outro dúvida, que foi resolvida nas últimas aulas,foi a da herança múltipla. Ainda assim, foi um excelente aprendizado. Aprende-se mais na prática. Principalmente quando estamos correndo contra o relógio e sem dormir (sob pressão). 
 
 
  
