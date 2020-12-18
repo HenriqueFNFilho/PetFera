@@ -31,4 +31,5 @@ public:
     void removeVeterinario(string nome);
     void inserirVeterinario(shared_ptr<Veterinario> novo);
     void listarVeterinario();
+    void gravaVeterinario();
 };

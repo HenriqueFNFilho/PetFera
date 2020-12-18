@@ -32,7 +32,7 @@ public:
     void setIdade(int idade);
     string getGenero();
     void setGenero(string genero);
-    vector<shared_ptr<Profissional>>getProfissional() const;
+    virtual vector<shared_ptr<Profissional>>getProfissional() const;
     void criarProfissional();
     void removeProfissional(string nome);
     void inserirProfissional(shared_ptr<Profissional> novo);

@@ -28,4 +28,5 @@ public:
     void removeMamifero(string nome);
     void inserirMamifero(shared_ptr<Mamifero> novo);
     void listarMamifero();
+    void gravaMamifero();
 };

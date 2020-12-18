@@ -1,10 +1,15 @@
 #include "animal.hpp"
 #include "reptil.hpp"
 #include<iostream>
+#include<iomanip>
+#include<fstream>
 
 
-
-using namespace std;
+using std::cin;
+using std::cout;
+using std::ios;
+using std::setfill;
+using std::setw;
 
 //Implementação da classe Répteis
 
@@ -85,4 +90,13 @@ void Reptil::listarReptil(){
         cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getEcdise() << endl << x->getTipopele() << endl;
 		cout << endl;
     }
+}
+
+void Reptil::gravaReptil(){
+	fstream arquivo("arqReptil.txt",ios::in | ios::out | ios::app);
+	for(auto& x: this->reptil){
+		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
+		<< "-" << x->getIdade() << "-" << x->getEcdise() << "-" << x->getTipopele() << endl;
+	}
+	arquivo.close();
 }

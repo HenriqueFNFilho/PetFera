@@ -29,6 +29,6 @@ public:
     void removeTratador(string nome);
     void inserirTratador(shared_ptr<Tratador> novo);
     void listarTratador();
-
+    void gravaTratador();
     
 };

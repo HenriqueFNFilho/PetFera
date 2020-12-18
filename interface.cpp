@@ -191,6 +191,12 @@ int main(int argc, char const *argv[]){
         
 
     }while(x!=0);
+    tratador->gravaTratador();
+    veterinario->gravaVeterinario();
+    anfibio->gravaAnfibio();
+    ave->gravaAve();
+    reptil->gravaReptil();
+    mamifero->gravaMamifero();
 
     return 0;
 }

@@ -1,10 +1,17 @@
 #include "animal.hpp"
 #include "ave.hpp"
 #include<iostream>
+#include<fstream>
+#include<iomanip>
+
+using std::cin;
+using std::cout;
+using std::ios;
+using std::setfill;
+using std::setw;
 
 
 
-using namespace std;
 
 //Implementação da classe Ave
 
@@ -101,4 +108,13 @@ void Ave::listarAve(){
         }
 		cout << endl;
     }
+}
+
+void Ave::gravaAve(){
+	fstream arquivo("arqAve.txt",ios::in | ios::out | ios::app);
+	for(auto& x: this->ave){
+		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
+		<< "-" << x->getIdade() << "-" << x->getCor() << "-" << x->getVoando() << endl;
+	}
+	arquivo.close();
 }

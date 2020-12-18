@@ -1,6 +1,7 @@
 #include "anfibio.hpp"
 #include "animal.hpp"
 #include<iostream>
+#include <fstream>
 
 
 
@@ -84,4 +85,13 @@ void Anfibio::listarAnfibio(){
         cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getTrocapele() << endl << x->getExcrecao() << endl;
 		cout << endl;
     }
+}
+
+void Anfibio::gravaAnfibio(){
+    fstream arquivo("arqAnfibio.txt",ios::in | ios::out | ios::app);
+	for(auto& x: this->anfibio){
+		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
+		<< "-" << x->getIdade() << "-" << x->getTrocapele() << "-" << x->getExcrecao() << endl;
+	}
+	arquivo.close();
 }

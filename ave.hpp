@@ -24,4 +24,5 @@ public:
     void removeAve(string nome);
     void inserirAve(shared_ptr<Ave> novo);
     void listarAve();
+    void gravaAve();
 };

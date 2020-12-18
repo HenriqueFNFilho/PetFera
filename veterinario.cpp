@@ -2,10 +2,11 @@
 #include "profissional.hpp"
 #include "veterinario.hpp"
 #include<iostream>
+#include<fstream>
 
 using std::cin;
 using std::cout;
-
+using std::ios;
 using std::setfill;
 using std::setw;
 
@@ -97,4 +98,13 @@ void Veterinario::listarVeterinario(){
         cout << x->getId() << endl << x->getNome() << endl << x->getIdade() << endl << x->getGenero() << endl << x->getEspecialidade() << endl << x->getFormacao() << endl;
 		cout << endl;
     }
+}
+
+void Veterinario::gravaVeterinario(){
+	fstream arquivo("arqVeterinario.txt",ios::in | ios::out | ios::app);
+	for(auto& x: this->veterinario){
+		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
+		<< "-" << x->getIdade() << "-" << x->getFormacao() << "-" << x->getEspecialidade() << endl;
+	}
+	arquivo.close();
 }

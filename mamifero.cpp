@@ -1,10 +1,16 @@
 #include "animal.hpp"
 #include "mamifero.hpp"
 #include<iostream>
+#include<iomanip>
+#include<fstream>
 
 
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::ios;
+using std::setfill;
+using std::setw;
 
 //Implementação da classe Mamíferos
 
@@ -107,4 +113,13 @@ void Mamifero::listarMamifero(){
         }
 		cout << endl;
     }
+}
+
+void Mamifero::gravaMamifero(){
+	fstream arquivo("arqMamifero.txt",ios::in | ios::out | ios::app);
+	for(auto& x: this->mamifero){
+		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
+		<< "-" << x->getIdade() << "-" << x->getAmamentando() << "-" << x->getPatas() << "-" << x->getDieta() << endl;
+	}
+	arquivo.close();
 }

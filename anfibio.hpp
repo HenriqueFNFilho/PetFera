@@ -27,4 +27,5 @@ public:
     void removeAnfibio(string nome);
     void inserirAnfibio(shared_ptr<Anfibio> novo);
     void listarAnfibio();
+    void gravaAnfibio();
 };

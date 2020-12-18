@@ -2,10 +2,11 @@
 #include "profissional.hpp"
 #include "tratador.hpp"
 #include<iostream>
+#include<fstream>
 
 using std::cin;
 using std::cout;
-
+using std::ios;
 using std::setfill;
 using std::setw;
 
@@ -85,4 +86,13 @@ void Tratador::listarTratador(){
         cout << x->getId() << endl << x->getNome() << endl << x->getIdade() << endl << x->getGenero() << endl << x->getHabilidade() << endl;
 		cout << endl;
     }
+}
+
+void Tratador::gravaTratador(){
+	fstream arquivo("arqTratador.txt",ios::in | ios::out | ios::app);
+	for(auto& x: this->tratador){
+		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
+		<< "-" << x->getIdade() << "-" << x->getHabilidade() << endl;
+	}
+	arquivo.close();
 }

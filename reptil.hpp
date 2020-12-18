@@ -24,4 +24,5 @@ public:
     void removeReptil(string nome);
     void inserirReptil(shared_ptr<Reptil> novo);
     void listarReptil();
+    void gravaReptil();
 };
