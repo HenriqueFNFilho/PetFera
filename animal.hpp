@@ -2,6 +2,8 @@
 #include<iostream>
 #include<vector>
 #include<memory>
+#include "veterinario.hpp"
+#include "tratador.hpp"
 
 
 using namespace std;
@@ -30,6 +32,8 @@ public:
     int getIdade();
     void setIdade(int idade);
     vector<shared_ptr<Animal>>getAnimal();
+    vector<shared_ptr<Veterinario>>getVeterinaio;
+    vector<shared_ptr<Tratador>>getTratador;
     void criarAnimal();
     void removeAnimal(string nome);
     void inserirAnimal(shared_ptr<Animal> novo);
