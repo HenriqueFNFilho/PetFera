@@ -8,6 +8,7 @@
 #include "tratador.hpp"
 #include "veterinario.hpp"
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -24,7 +25,9 @@ int main(int argc, char const *argv[]){
     int x;
     int y;
     string a;
-
+    
+    fstream arquivo1, arquivo2, arquivo3, arquivo4, arquivo5, arquivo6;
+    string linha1, linha2, linha3, linha4, linha5, linha6;
     
 
     do{
@@ -197,6 +200,56 @@ int main(int argc, char const *argv[]){
     ave->gravaAve();
     reptil->gravaReptil();
     mamifero->gravaMamifero();
+    
+    arquivo1.open("arqTratador.txt",ios::in);
+    cout << "Tratadores: " << endl;
+    
+    if(arquivo1.is_open()){
+    	while(getline(arquivo1,linha1)){
+    		cout << linha1 << endl;
+    	}
+    }
+    
+    arquivo2.open("arqVeterinario.txt",ios::in);
+    cout << "Veterinarios: " << endl;
+    
+    if(arquivo2.is_open()){
+    	while(getline(arquivo2,linha2)){
+    		cout << linha2 << endl;
+    	}
+    }
+    arquivo3.open("arqAnfibio.txt",ios::in);
+    cout << "Anfibios : " << endl;
+    
+    if(arquivo3.is_open()){
+    	while(getline(arquivo3,linha3)){
+    		cout << linha3 << endl;
+    	}
+    }
+    arquivo4.open("arqAve.txt",ios::in);
+    cout << "Aves: " << endl;
+    
+    if(arquivo4.is_open()){
+    	while(getline(arquivo4,linha4)){
+    		cout << linha4 << endl;
+    	}
+    }
+    arquivo5.open("arqReptil.txt",ios::in);
+    cout << "Repteis : " << endl;
+    
+    if(arquivo5.is_open()){
+    	while(getline(arquivo5,linha5)){
+    		cout << linha5 << endl;
+    	}
+    }
+    arquivo6.open("arqMamifero.txt",ios::in);
+    cout << "Mamiferos: " << endl;
+    
+    if(arquivo6.is_open()){
+    	while(getline(arquivo6,linha6)){
+    		cout << linha6 << endl;
+    	}
+    }
 
     return 0;
 }
