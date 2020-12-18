@@ -1,4 +1,6 @@
 #include "animal.hpp"
+#include "veterinario.hpp"
+#include "tratador.hpp"
 #include<iostream>
 
 
@@ -92,3 +94,9 @@ void Animal::listarAnimal(){
 		cout << endl;
     }
 }
+
+
+
+
+
+

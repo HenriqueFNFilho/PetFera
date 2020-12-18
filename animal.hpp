@@ -35,3 +35,7 @@ public:
     void inserirAnimal(shared_ptr<Animal> novo);
     void listarAnimal();
 };
+
+
+
+

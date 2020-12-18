@@ -47,7 +47,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //inserir veterinario
                         veterinario->criarVeterinario();
-                        veterinario->gravaVeterinario();
+                        
                     }
                     else if (y==2){
                         //remove veterinario
@@ -58,8 +58,9 @@ int main(int argc, char const *argv[]){
                     else if (y==1){
                         //listar Veterinarios
                         cout << endl << "Os veterinarios são:" << endl;
-                        //veterinario->listarVeterinario();
                         veterinario->lerVeterinario();
+                        veterinario->listarVeterinario();
+                        
                     }
                     y=10;
                     
@@ -73,7 +74,6 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //inserir tratador
                         tratador->criarTratador();
-                        tratador->gravaTratador();
                     }
                     else if (y==2){
                         //excluir Tratador
@@ -84,8 +84,9 @@ int main(int argc, char const *argv[]){
                     else if (y==1){
                         //listar Tratador
                         cout << endl << "Os tratadores são:" << endl;
-                        //tratador->listarTratador();
                         tratador->lerTratador();
+                        tratador->listarTratador();
+                        
                     }
                     
                                       
@@ -105,7 +106,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //inserir anfibio
                         anfibio->criarAnfibio();
-                        anfibio->gravaAnfibio();
+                        
                     }
                     else if (y==2){
                         //excluir anfibio
@@ -115,8 +116,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if(y==1){
                         //listar Anfibios
-                        //anfibio->listarAnfibio();
                         anfibio->lerAnfibio();
+                        anfibio->listarAnfibio();
                     }
                     y=10;             // para não entrar em outro if
                     
@@ -129,7 +130,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //criar reptil
                         reptil->criarReptil();
-                        reptil->gravaReptil();
+                        
                     }
                     else if (y==2){
                         cout << "Qual o nome do reptil que deseja remover?: ";
@@ -138,8 +139,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if (y==1) {
                         //listar Repteis
-                        //reptil->listarReptil();
                         reptil->lerReptil();
+                        reptil->listarReptil();
                     }
 
                     y=10;                //impedir que retorne aos if's        
@@ -154,7 +155,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //cria ave
                         ave->criarAve();
-                        ave->gravaAve();
+                        
                     }
                     else if (y==2){
                         //remove ave
@@ -164,8 +165,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if (y==1){
                         //listar Aves;
-                        //ave->listarAve();
                         ave->lerAve();
+                        ave->listarAve();
                     }
                     y=10;
                 }
@@ -177,7 +178,7 @@ int main(int argc, char const *argv[]){
                     if(y==3){
                         //insere mamífero
                         mamifero->criarMamifero();
-                        mamifero->gravaMamifero();
+                        
                     }
                     else if (y==2){
                         //remove mamífero
@@ -187,8 +188,8 @@ int main(int argc, char const *argv[]){
                     }
                     else if (y==1){
                         //listar Mamiferos
-                        //mamifero->listarMamifero();
                         mamifero->lerMamifero();
+                        mamifero->listarMamifero();
                     }
 
                     y=10;
@@ -202,6 +203,13 @@ int main(int argc, char const *argv[]){
         
 
     }while(x!=0);
+
+    tratador->gravaTratador();
+    veterinario->gravaVeterinario();
+    mamifero->gravaMamifero();
+    ave->gravaAve();
+    reptil->gravaReptil();
+    anfibio->gravaAnfibio();
 
     return 0;
 }

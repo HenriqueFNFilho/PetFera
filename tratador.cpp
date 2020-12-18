@@ -89,7 +89,7 @@ void Tratador::listarTratador(){
 }
 
 void Tratador::gravaTratador(){
-	fstream arquivo("arqTratador.txt",ios::in | ios::out | ios::app);
+	fstream arquivo("arqTratador.txt",ios::app);
 	for(auto& x: this->tratador){
 		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
 		<< "-" << x->getIdade() << "-" << x->getHabilidade() << endl;
