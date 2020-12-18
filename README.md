@@ -12,7 +12,9 @@ Tratata-se da criação de um software administrativo de um petshop, onde é pos
 
 O repositório encontra-se em https://github.com/HenriqueFNFilho/PetFera
 
-A explicação sobre o funcionamento encontra-se em: https://youtu.be/MlkIxhVKSB4
+A explicação sobre o funcionamento encontra-se em (parte 1): https://youtu.be/MlkIxhVKSB4
+
+A apresentação da parte 2 encontra-se em: https://youtu.be/MiPigneGbXg
 
 EXECUÇÃO DO PROGRAMA
 
