@@ -19,8 +19,8 @@ A apresentação da parte 2 encontra-se em: https://youtu.be/MiPigneGbXg
 EXECUÇÃO DO PROGRAMA
 
 Descompacte o arquivo no diretório desejado.
-Acesse a pasta PetFera pelo terminal.
-ex: $ cd /home/usuario/PetFera/
+Acesse a pasta /PetFera-main pelo terminal.
+ex: $ cd /home/usuario/PetFera-main/
 
 Para compilar, digite no terminal:
 $ make
