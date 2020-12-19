@@ -34,7 +34,7 @@ void Mamifero::setDieta(string dieta){
     this->dieta = dieta;
 }
 string Mamifero::getPatas(){
-    return this->patas = patas;
+    return this->patas;
 }
 void Mamifero::setPatas(string patas){
     this->patas = patas;
