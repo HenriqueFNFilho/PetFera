@@ -17,7 +17,7 @@ using std::setw;
 
 Ave::Ave(){}
 
-Ave::Ave(int id, string nome, string genero, int idade, string cor, bool voando): Animal(id, nome, genero, idade), cor(cor), voando(voando){}
+Ave::Ave(int id, tipoAnimal tipo, string nome, string genero, int idade, string cor, bool voando): Animal(id, tipo, nome, genero, idade), cor(cor), voando(voando){}
 
 
 Ave::~Ave(){}
@@ -38,6 +38,8 @@ vector<shared_ptr<Ave>> Ave::getAve(){
 	return this->ave;
 }
 
+
+/*
 void Ave::criarAve(){
 	int cAve_id;
     string cAve_nome;
@@ -83,7 +85,9 @@ void Ave::criarAve(){
 
     }while(aux == 1);
 }
+*/
 
+/*
 void Ave::removeAve(string nome){
 	int y = ave.size();
      for(int x = 0; x < (y-1); x++){
@@ -96,20 +100,9 @@ void Ave::removeAve(string nome){
 void Ave::inserirAve(shared_ptr<Ave> novo){
 	this->ave.push_back(novo);
 }
+*/
 
-void Ave::listarAve(){
-	for(auto& x: this->ave){
-        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getCor() << endl;
-		if(x->getVoando() == 1){
-            cout << "Está voando" << endl;
-        }
-        else if (x->getVoando()==0){
-            cout << "Não está voando" << endl;
-        }
-		cout << endl;
-    }
-}
-
+/*
 void Ave::gravaAve(){
 	fstream arquivo("arqAve.txt",ios::in | ios::out | ios::app);
 	for(auto& x: this->ave){
@@ -118,7 +111,9 @@ void Ave::gravaAve(){
 	}
 	arquivo.close();
 }
+*/
 
+/*
 void Ave::lerAve(){
     fstream arquivo;
 	string linha;
@@ -130,3 +125,32 @@ void Ave::lerAve(){
     }
 	arquivo.close();
 }
+*/
+
+/*
+void Ave::listarAve(){
+	cout << setfill (' ') << setw (5) << "ID" << " | " 
+		<< setfill ('.') << setw (30) << "Nome" << " | " 
+		<< setfill (' ') << setw (5) << "Idade" << " | "
+		<< setfill (' ') << setw (15) << "Genero" << " | " 
+		<< setfill (' ') << setw (15) << "Cor" << " | " 
+		<< setfill (' ') << setw (15) << "Voando" << endl;
+    for(auto& x: this->ave){
+        cout << *x;
+    }
+}
+*/
+
+/*
+ostream& 
+operator<< (ostream &o, Ave& ave){
+    string strVoando = (ave.voando == true) ? "Sim" : "Nao";
+	o << setfill (' ') << setw (5) << ave.getId() << " | " 
+		<< setfill ('.') << setw (30) << ave.getNome() << " | " 
+		<< setfill (' ') << setw (5) << ave.getIdade() << " | "
+		<< setfill (' ') << setw (15) << ave.getGenero() << " | " 
+		<< setfill (' ') << setw (15) << ave.getCor() <<" | " 
+		<< setfill (' ') << setw (15) << strVoando << endl;
+	return o;
+}
+*/
