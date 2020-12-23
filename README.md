@@ -16,6 +16,8 @@ A explicação sobre o funcionamento encontra-se em (parte 1): https://youtu.be/
 
 A apresentação da parte 2 encontra-se em: https://youtu.be/MiPigneGbXg
 
+A apresentação da parte 3 encontra-se em https://youtu.be/cIeg0C-49Lo
+
 EXECUÇÃO DO PROGRAMA
 
 Descompacte o arquivo no diretório desejado.
@@ -26,13 +28,18 @@ Para compilar, digite no terminal:
 $ make
 
 Para executar, digite no terminal:
-$ ./interface
+$ make run
+
+Para limpar os arquivos de dados e o programa PetFera, digite no terminal:
+$ make clean.
 
 
 Foram corrigidos os erros de inserção, remoção e listagem dos vetores. As classe foram separadas em arquivos diferentes, para respeitar a modularização. 
-Foram utilizados ponteiros inteligente, para evitar o vazamento de memória. Foi adicionada a gravação em arquivos.
+Foram utilizados ponteiros inteligente, para evitar o vazamento de memória. Foi adicionada a gravação em arquivos. Foram corrigidos os problemas de persistência.
+Foram utilizadas as sobrecargas de operadores. Também foi corrigida a ausência de classes abstratas.
 
-Tivemos problemas ao tentar utilizar o conteúdo dos arquivos produzidos. Conseguimos, mas não como haviamos planejado. A falta de tempo para produzir foi uma constante, por isso nossas últimas energias foram gastas na gravação e leitura dos arquivos. Na primeira parte, encontramos dificuldades na escolha dos parâmetros e na últilização de vetor (ambos contornados). Outro dúvida, que foi resolvida nas últimas aulas,foi a da herança múltipla. Ainda assim, foi um excelente aprendizado. Aprende-se mais na prática. Principalmente quando estamos correndo contra o relógio e sem dormir (sob pressão). 
+
+Obs.: caso o programa não rode, por favor, utilize os arquivos da pasta compactada enviada pelo SIGAA, pois estou tendo problemas para fazer o upload de todos os arquivos, o que certamente vai gerar inconcistências que não existem nos arquivos da pasta enviada.
 
 
  
