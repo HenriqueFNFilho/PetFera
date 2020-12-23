@@ -12,9 +12,25 @@ Animal::Animal(){
     this->nome = "Null";
 }
 
-Animal::Animal(int id, string nome, string genero, int idade):id(id), nome(nome), genero(genero), idade(idade){}
+Animal::Animal(int id, tipoAnimal tipo, string nome, string genero, int idade):id(id), tipo(tipo), nome(nome), genero(genero), idade(idade){}
 
 Animal::~Animal(){}
+
+Veterinario* Animal::getVeterinario(){
+	return this->veterinario;
+}
+
+void Animal::setVeterinario(Veterinario* veterinario){
+	this->veterinario = veterinario;
+}
+
+Tratador* Animal::getTratador(){
+	return this->tratador;
+}
+
+void Animal::setTratador(Tratador* tratador){
+	this->tratador = tratador;
+}
 
 int Animal::getId(){
 	return this->id;
@@ -22,6 +38,14 @@ int Animal::getId(){
 
 void Animal::setId(int id){
 	this->id = id;
+}
+
+tipoAnimal Animal::getTipo(){
+	return this->tipo;
+}
+
+void Animal::setTipo(tipoAnimal tipo){
+	this->tipo = tipo;
 }
 
 string Animal::getNome() const{
@@ -48,6 +72,7 @@ vector<shared_ptr<Animal>> Animal::getAnimal(){
 	return this->animal;
 }
 
+/*
 void Animal::criarAnimal(){
 	int cA_id;
     string cA_nome;
@@ -74,7 +99,9 @@ void Animal::criarAnimal(){
 
     }while(aux == 1);
 }
+*/
 
+/*
 void Animal::removeAnimal(string nome){
 	int y = animal.size();
      for(int x = 0; x < (y-1); x++){
@@ -83,19 +110,21 @@ void Animal::removeAnimal(string nome){
          }
      }
 }
-
+*/
+/*
 void Animal::inserirAnimal(shared_ptr<Animal> novo){
 	this->animal.push_back(novo);
 }
+*/
 
+/*
 void Animal::listarAnimal(){
 	for(auto& x: this->animal){
         cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() <<endl;
 		cout << endl;
     }
 }
-
-
+*/
 
 
 

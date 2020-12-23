@@ -2,6 +2,7 @@
 #include "animal.hpp"
 #include<iostream>
 #include <fstream>
+#include<iomanip>
 
 
 
@@ -11,11 +12,9 @@ using namespace std;
 
 Anfibio::Anfibio(){}
 
-Anfibio::Anfibio(int id, string nome, string genero, int idade, string trocapele, string excrecao): Animal(id, nome, genero, idade), trocapele(trocapele), excrecao(excrecao){}
+Anfibio::Anfibio(int id, tipoAnimal tipo, string nome, string genero, int idade, string trocapele, string excrecao): Animal(id, tipo, nome, genero, idade), trocapele(trocapele), excrecao(excrecao){}
 
-Anfibio::~Anfibio()
-{
-}
+Anfibio::~Anfibio(){}
 
 string Anfibio::getTrocapele() const{
     return this->trocapele;
@@ -34,6 +33,7 @@ vector<shared_ptr<Anfibio>> Anfibio::getAnfibio(){
 	return this->anfibio;
 }
 
+/*
 void Anfibio::criarAnfibio(){
 	int cAnf_id;
     string cAnf_nome;
@@ -66,7 +66,9 @@ void Anfibio::criarAnfibio(){
 
     }while(aux == 1);
 }
+*/
 
+/*
 void Anfibio::removeAnfibio(string nome){
 	int y = anfibio.size();
      for(int x = 0; x < (y-1); x++){
@@ -75,18 +77,16 @@ void Anfibio::removeAnfibio(string nome){
          }
      }
 }
+*/
 
+/*
 void Anfibio::inserirAnfibio(shared_ptr<Anfibio> novo){
 	this->anfibio.push_back(novo);
 }
+*/
 
-void Anfibio::listarAnfibio(){
-	for(auto& x: this->anfibio){
-        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getTrocapele() << endl << x->getExcrecao() << endl;
-		cout << endl;
-    }
-}
 
+/*
 void Anfibio::gravaAnfibio(){
     fstream arquivo("arqAnfibio.txt",ios::in | ios::out | ios::app);
 	for(auto& x: this->anfibio){
@@ -95,7 +95,9 @@ void Anfibio::gravaAnfibio(){
 	}
 	arquivo.close();
 }
+*/
 
+/*
 void Anfibio::lerAnfibio(){
     fstream arquivo;
 	string linha;
@@ -107,3 +109,31 @@ void Anfibio::lerAnfibio(){
     }
 	arquivo.close();
 }
+*/
+
+/*
+void Anfibio::listarAnfibio(){
+	cout << setfill (' ') << setw (5) << "ID" << " | " 
+		<< setfill ('.') << setw (30) << "Nome" << " | " 
+		<< setfill (' ') << setw (5) << "Idade" << " | "
+		<< setfill (' ') << setw (15) << "Genero" << " | " 
+		<< setfill (' ') << setw (15) << "Troca de pele" <<" | " 
+		<< setfill (' ') << setw (15) << "Excreção" << endl;
+    for(auto& x: this->anfibio){
+        cout << *x;
+    }
+}
+*/
+
+/*
+ostream& 
+operator<< (ostream &o, Anfibio& anfibio){
+	o << setfill (' ') << setw (5) << anfibio.getId() << " | " 
+		<< setfill ('.') << setw (30) << anfibio.getNome() << " | " 
+		<< setfill (' ') << setw (5) << anfibio.getIdade() << " | "
+		<< setfill (' ') << setw (15) << anfibio.getGenero() << " | " 
+		<< setfill (' ') << setw (15) << anfibio.getTrocapele() <<" | " 
+		<< setfill (' ') << setw (15) << anfibio.getExcrecao() << endl;
+	return o;
+}
+*/
