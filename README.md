@@ -1,8 +1,7 @@
 # PetFera
 Produzido por:
-FLAVIANO VENTURAS VIEIRA
 HENRIQUE FRANCISCO DO NASCIMENTO FILHO
-PERICLES ANDRE ANDRADE ALVES
+
 
 Para a disciplina de Linguagem de Programação I
 Professor SILVIO COSTA SAMPAIO
