@@ -24,11 +24,14 @@ public:
     string getHabilidade();
     void setHabilidade(string habilidade);
 	friend ostream& operator<< (ostream &o, Tratador& tratador);
+    friend istream& operator>> (istream &i, Tratador& tratador);
     vector<shared_ptr<Tratador>>getTratador();
+    //void extraiTratador();
+    void setId(int id);
     void criarTratador();
     void removeTratador(string nome);
     void inserirTratador(shared_ptr<Tratador> novo);
     void listarTratador();
     void gravaTratador();
-    void lerTratador();    
+    void lerTratador();
 };

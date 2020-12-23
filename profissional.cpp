@@ -46,6 +46,9 @@ string Profissional::getGenero(){
 void Profissional::setGenero(string genero){
     this->genero = genero;
 }
+
+
+/*
 ostream& operator<< (ostream& o, Profissional& profissional){
     o << setfill (' ') << setw (10) << profissional.getId() << " | " 
 		<< setfill ('.') << setw (50) << profissional.getNome() << " | " 
@@ -53,11 +56,15 @@ ostream& operator<< (ostream& o, Profissional& profissional){
 		<< setfill (' ') << setw (10) << profissional.getGenero();
 	return o;
 }
+*/
 
+/*
 vector<shared_ptr<Profissional>> Profissional::getProfissional() const{
 	return this->profissional;
 }
+*/
 
+/*
 void Profissional::criarProfissional(){
 	int cP_id;
     string cP_nome;
@@ -84,7 +91,9 @@ void Profissional::criarProfissional(){
 
     }while(aux == 1);
 }
+*/
 
+/*
 void Profissional::removeProfissional(string nome){
 	int y = profissional.size();
      for(int x = 0; x < (y-1); x++){
@@ -93,14 +102,20 @@ void Profissional::removeProfissional(string nome){
          }
      }
 }
+*/
 
+/*
 void Profissional::inserirProfissional(shared_ptr<Profissional> novo){
 	this->profissional.push_back(novo);
 }
+*/
 
+/*
 void Profissional::listarProfissional(){
 	for(auto& x: this->profissional){
         cout << x->getId() << endl << x->getNome() << endl << x->getIdade() << endl << x->getGenero() << endl;
 		cout << endl;
     }
 }
+
+*/

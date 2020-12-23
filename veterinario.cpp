@@ -31,14 +31,19 @@ string Veterinario::getFormacao(){
 void Veterinario::setFormacao(string formacao){
     this->formacao = formacao;
 }
+
+void Veterinario::setId(int id){
+    this->id = id;
+}
+
 ostream& 
 operator<< (ostream &o, Veterinario& veterinario){
-	o << setfill (' ') << setw (10) << veterinario.getId() << " | " 
-		<< setfill ('.') << setw (50) << veterinario.getNome() << " | " 
+	o << setfill (' ') << setw (5) << veterinario.getId() << " | " 
+		<< setfill ('.') << setw (30) << veterinario.getNome() << " | " 
 		<< setfill (' ') << setw (5) << veterinario.getIdade() << " | "
-		<< setfill (' ') << setw (10) << veterinario.getGenero() << " | " 
-		<< setfill (' ') << setw (50) << veterinario.getEspecialidade() <<" | " 
-		<< setfill (' ') << setw (50) << veterinario.getFormacao();
+		<< setfill (' ') << setw (15) << veterinario.getGenero() << " | " 
+		<< setfill (' ') << setw (15) << veterinario.getEspecialidade() <<" | " 
+		<< setfill (' ') << setw (15) << veterinario.getFormacao() << endl;
 	return o;
 }
 
@@ -94,14 +99,19 @@ void Veterinario::inserirVeterinario(shared_ptr<Veterinario> novo){
  }
 
 void Veterinario::listarVeterinario(){
+	cout << setfill (' ') << setw (5) << "ID" << " | " 
+		<< setfill ('.') << setw (30) << "Nome" << " | " 
+		<< setfill (' ') << setw (5) << "Idade" << " | "
+		<< setfill (' ') << setw (15) << "Genero" << " | " 
+		<< setfill (' ') << setw (15) << "Especialidade" <<" | " 
+		<< setfill (' ') << setw (15) << "Formação" << endl;
     for(auto& x: this->veterinario){
-        cout << x->getId() << endl << x->getNome() << endl << x->getIdade() << endl << x->getGenero() << endl << x->getEspecialidade() << endl << x->getFormacao() << endl;
-		cout << endl;
+        cout << *x;
     }
 }
 
 void Veterinario::gravaVeterinario(){
-	fstream arquivo("arqVeterinario.txt",ios::in | ios::out | ios::app);
+	ofstream arquivo("arqVeterinario.txt");
 	for(auto& x: this->veterinario){
 		arquivo << x->getId() << "-" << x->getNome() << "-" << x->getGenero()
 		<< "-" << x->getIdade() << "-" << x->getFormacao() << "-" << x->getEspecialidade() << endl;
@@ -110,13 +120,55 @@ void Veterinario::gravaVeterinario(){
 }
 
 void Veterinario::lerVeterinario(){
+	vector<string>auxiliar;
 	fstream arquivo;
 	string linha;
+	int aux = 0;
+	string nome, genero, formacao, especialidade;
+	int id, idade;
 	arquivo.open("arqVeterinario.txt",ios::in);    
     if(arquivo.is_open()){
     	while(getline(arquivo,linha, '-')){
-    		cout << linha << endl;
+    		auxiliar.push_back(linha);
     	}
-    }
+
+	}
+    int y = auxiliar.size();
+     for(int x = 0; x < (y-1); x++){
+		if(aux==0){
+			id = (stoi(auxiliar.at(x)));
+			//cout << id << endl;
+		}
+		if(aux==1){
+			nome = auxiliar.at(x);
+			//cout << nome << endl;
+		}
+		if(aux==2){
+			genero = auxiliar.at(x);
+			//cout << genero << endl;
+		}
+		if(aux==3){
+			idade = (stoi(auxiliar.at(x)));
+			//cout << idade << endl;
+		}
+		if(aux==4){
+			formacao = auxiliar.at(x);
+			//cout << habilidade << endl;
+		}
+		if(aux==4){
+			especialidade = auxiliar.at(x);
+			//cout << habilidade << endl;
+		}
+
+
+        
+        aux++;
+		if(aux == 5){
+			aux = 0;
+			shared_ptr<Veterinario> criado = make_shared<Veterinario>(id, nome, idade, genero, formacao, especialidade);
+
+    		this->inserirVeterinario(criado);
+		}
+	 }
 	arquivo.close();
 }

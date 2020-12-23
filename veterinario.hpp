@@ -26,7 +26,9 @@ public:
     string getFormacao();
     void setFormacao(string formacao);
 	friend ostream& operator<< (ostream &o, Veterinario& veterinario);
+    friend istream& operator>> (istream &i, Veterinario& veterinario);
     vector<shared_ptr<Veterinario>>getVeterinario();
+    void setId(int id);
     void criarVeterinario();
     void removeVeterinario(string nome);
     void inserirVeterinario(shared_ptr<Veterinario> novo);

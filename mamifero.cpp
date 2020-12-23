@@ -16,7 +16,7 @@ using std::setw;
 
 Mamifero::Mamifero(){}
 
-Mamifero::Mamifero(int id, string nome, string genero, int idade, bool amamentando, string dieta, string patas): Animal(id, nome, genero, idade), amamentando(amamentando), dieta(dieta), patas(patas){}
+Mamifero::Mamifero(int id, tipoAnimal tipo, string nome, string genero, int idade, bool amamentando, string dieta, string patas): Animal(id, tipo, nome, genero, idade), amamentando(amamentando), dieta(dieta), patas(patas){}
 
 
 Mamifero::~Mamifero(){}
@@ -43,6 +43,7 @@ vector<shared_ptr<Mamifero>> Mamifero::getMamifero(){
 	return this->mamifero;
 }
 
+/*
 void Mamifero::criarMamifero(){
 	int cM_id;
     string cM_nome;
@@ -88,7 +89,9 @@ void Mamifero::criarMamifero(){
 
     }while(aux == 1);
 }
+*/
 
+/*
 void Mamifero::removeMamifero(string nome){
 	int y = mamifero.size();
      for(int x = 0; x < (y-1); x++){
@@ -97,24 +100,16 @@ void Mamifero::removeMamifero(string nome){
          }
      }
 }
+*/
 
+/*
 void Mamifero::inserirMamifero(shared_ptr<Mamifero> novo){
 	this->mamifero.push_back(novo);
 }
+*/
 
-void Mamifero::listarMamifero(){
-	for(auto& x: this->mamifero){
-        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getDieta() << endl << x->getPatas() << endl;
-		if(x->getAmamentando() == 1){
-            cout << "Está amamentando" << endl;
-        }
-        else if (x->getAmamentando()==0){
-            cout << "Não está amamentando" << endl;
-        }
-		cout << endl;
-    }
-}
 
+/*
 void Mamifero::gravaMamifero(){
 	fstream arquivo("arqMamifero.txt",ios::in | ios::out | ios::app);
 	for(auto& x: this->mamifero){
@@ -123,7 +118,9 @@ void Mamifero::gravaMamifero(){
 	}
 	arquivo.close();
 }
+*/
 
+/*
 void Mamifero::lerMamifero(){
 	fstream arquivo;
 	string linha;
@@ -135,3 +132,34 @@ void Mamifero::lerMamifero(){
     }
 	arquivo.close();
 }
+*/
+
+/*
+void Mamifero::listarMamifero(){
+	cout << setfill (' ') << setw (5) << "ID" << " | " 
+		<< setfill ('.') << setw (30) << "Nome" << " | " 
+		<< setfill (' ') << setw (5) << "Idade" << " | "
+		<< setfill (' ') << setw (15) << "Genero" << " | " 
+		<< setfill (' ') << setw (15) << "Amamentando" <<" | " 
+		<< setfill (' ') << setw (15) << "Dieta" << " | "
+		<< setfill (' ') << setw (15) << "Patas" << endl;
+    for(auto& x: this->mamifero){
+        cout << *x;
+    }
+}
+*/
+
+/*
+ostream& 
+operator<< (ostream &o, Mamifero& mamifero){
+	string strAmamentando = (mamifero.amamentando == true) ? "Sim" : "Nao";
+	o << setfill (' ') << setw (5) << mamifero.getId() << " | " 
+		<< setfill ('.') << setw (30) << mamifero.getNome() << " | " 
+		<< setfill (' ') << setw (5) << mamifero.getIdade() << " | "
+		<< setfill (' ') << setw (15) << mamifero.getGenero() << " | " 
+		<< setfill (' ') << setw (15) << strAmamentando << " | " 
+		<< setfill (' ') << setw (15) << mamifero.getDieta() <<" | " 
+		<< setfill (' ') << setw (15) << mamifero.getPatas() << endl;
+	return o;
+}
+*/

@@ -7,19 +7,24 @@
 #include "ave.hpp"
 #include "tratador.hpp"
 #include "veterinario.hpp"
+#include "petfera.hpp"
 #include <vector>
 
 using namespace std;
 
 int main(int argc, char const *argv[]){
 	
-    Tratador* tratador = new Tratador();
-    Veterinario* veterinario = new Veterinario();
+    shared_ptr<Tratador> tratador = make_shared<Tratador>();
+    shared_ptr<Veterinario> veterinario = make_shared<Veterinario>();
 
-    Reptil* reptil = new Reptil();
-	Anfibio* anfibio = new Anfibio();
-	Ave* ave = new Ave();
-	Mamifero* mamifero = new Mamifero();
+    shared_ptr<Reptil> reptil = make_shared<Reptil>();
+	shared_ptr<Anfibio> anfibio = make_shared<Anfibio>();
+	shared_ptr<Ave> ave = make_shared<Ave>();
+	shared_ptr<Mamifero> mamifero = make_shared<Mamifero>();
+    shared_ptr<PetFera> pf = make_shared<PetFera>();
+    //pf->criaAnimais();
+    //pf->criaProfissionais();
+    //pf->criarAnfibio();
 
     int x;
     int y;

@@ -15,7 +15,7 @@ using std::setw;
 
 Reptil::Reptil(){}
 
-Reptil::Reptil(int id, string nome,string genero, int idade, string ecdise, string tipopele): Animal(id, nome, genero, idade), ecdise(ecdise), tipopele(tipopele){}
+Reptil::Reptil(int id, tipoAnimal tipo, string nome, string genero, int idade, string ecdise, string tipopele): Animal(id, tipo, nome, genero, idade), ecdise(ecdise), tipopele(tipopele){}
 
 
 Reptil::~Reptil()
@@ -39,6 +39,7 @@ vector<shared_ptr<Reptil>> Reptil::getReptil(){
 	return this->reptil;
 }
 
+/*
 void Reptil::criarReptil(){
 	int cR_id;
     string cR_nome;
@@ -71,7 +72,9 @@ void Reptil::criarReptil(){
 
     }while(aux == 1);
 }
+*/
 
+/*
 void Reptil::removeReptil(string nome){
 	int y = reptil.size();
      for(int x = 0; x < (y-1); x++){
@@ -80,18 +83,15 @@ void Reptil::removeReptil(string nome){
          }
      }
 }
+*/
 
+/*
 void Reptil::inserirReptil(shared_ptr<Reptil> novo){
 	this->reptil.push_back(novo);
 }
+*/
 
-void Reptil::listarReptil(){
-	for(auto& x: this->reptil){
-        cout << x->getId() << endl << x->getNome() << endl <<  x->getGenero() << endl << x->getIdade() << endl << x->getEcdise() << endl << x->getTipopele() << endl;
-		cout << endl;
-    }
-}
-
+/*
 void Reptil::gravaReptil(){
 	fstream arquivo("arqReptil.txt",ios::in | ios::out | ios::app);
 	for(auto& x: this->reptil){
@@ -100,7 +100,9 @@ void Reptil::gravaReptil(){
 	}
 	arquivo.close();
 }
+*/
 
+/*
 void Reptil::lerReptil(){
     fstream arquivo;
 	string linha;
@@ -112,3 +114,31 @@ void Reptil::lerReptil(){
     }
 	arquivo.close();
 }
+*/
+
+/*
+void Reptil::listarReptil(){
+	cout << setfill (' ') << setw (5) << "ID" << " | " 
+		<< setfill ('.') << setw (30) << "Nome" << " | " 
+		<< setfill (' ') << setw (5) << "Idade" << " | "
+		<< setfill (' ') << setw (15) << "Genero" << " | " 
+		<< setfill (' ') << setw (15) << "Ecdise" << " | " 
+		<< setfill (' ') << setw (15) << "Tipo de pele" << endl;
+    for(auto& x: this->reptil){
+        cout << *x;
+    }
+}
+*/
+
+/*
+ostream& 
+operator<< (ostream &o, Reptil& reptil){
+	o << setfill (' ') << setw (5) << reptil.getId() << " | " 
+		<< setfill ('.') << setw (30) << reptil.getNome() << " | " 
+		<< setfill (' ') << setw (5) << reptil.getIdade() << " | "
+		<< setfill (' ') << setw (15) << reptil.getGenero() << " | " 
+		<< setfill (' ') << setw (15) << reptil.getEcdise() <<" | " 
+		<< setfill (' ') << setw (15) << reptil.getTipopele() << endl;
+	return o;
+}
+*/
